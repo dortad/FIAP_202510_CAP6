@@ -152,14 +152,7 @@ CREATE TABLE parametros (
     CONSTRAINT pk_parametros PRIMARY KEY (variedade, epoca, processo)
 );
 
--- Tabela legada (PetShop) - mantida para compatibilidade
-CREATE TABLE petshop (
-    pet_id NUMBER GENERATED AS IDENTITY,
-    tipo_pet VARCHAR2(10),
-    nome_pet VARCHAR2(50),
-    idade NUMBER(20,2),
-    CONSTRAINT pk_petshop PRIMARY KEY (pet_id)
-);
+
 
 ```
 
