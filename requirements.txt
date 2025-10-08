@@ -1,0 +1,60 @@
+# Dependências do projeto FIAP_202510_CAP6
+# Sistema CRUD de Parâmetros e Manipulação JSON
+
+# ==============================================================================
+# DEPENDÊNCIAS PRINCIPAIS
+# ==============================================================================
+
+# Conexão com Oracle Database
+oracledb>=2.3.0
+
+# Manipulação e análise de dados (versão compatível com Python 3.14)
+pandas>=2.2.0
+
+# Manipulação de arquivos Excel
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+
+# ==============================================================================
+# BIBLIOTECAS PADRÃO PYTHON (não precisam ser instaladas)
+# ==============================================================================
+# json - manipulação de arquivos JSON
+# os - operações do sistema operacional
+# sys - informações do sistema Python
+
+# ==============================================================================
+# DEPENDÊNCIAS DE DESENVOLVIMENTO (opcional)
+# ==============================================================================
+# Uncomment below for development tools:
+
+# # Formatação de código
+# black>=23.0.0
+# 
+# # Linting e análise de código
+# flake8>=6.0.0
+# pylint>=3.0.0
+# 
+# # Testes
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+# 
+# # Notebooks Jupyter
+# jupyter>=1.0.0
+# notebook>=6.5.0
+
+# ==============================================================================
+# INFORMAÇÕES DO AMBIENTE
+# ==============================================================================
+# Este projeto foi desenvolvido com:
+# - Python 3.14.0
+# - Sistema operacional: Windows
+# - Ambiente virtual: venv_Cap6
+
+# ==============================================================================
+# INSTALAÇÃO
+# ==============================================================================
+# Para instalar todas as dependências:
+# pip install -r requirements.txt
+#
+# Para instalar dependências de desenvolvimento também:
+# pip install -r requirements.txt black flake8 pytest jupyter
