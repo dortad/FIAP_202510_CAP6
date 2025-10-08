@@ -137,15 +137,28 @@ FIAP_202510_CAP6/
 ## 🗄️ Estrutura do Banco de Dados
 
 ```sql
--- Tabela principal de parâmetros
-CREATE TABLE PARAMETROS (
-    id NUMBER PRIMARY KEY,
-    variedade VARCHAR2(100) NOT NULL,    -- Tipo de parâmetro
-    epoca VARCHAR2(50) NOT NULL,         -- Período/sazonalidade  
-    processo VARCHAR2(100) NOT NULL,     -- Processo associado
-    valor NUMBER(10,2),                  -- Valor numérico
-    descricao VARCHAR2(255),            -- Descrição detalhada
-    data_criacao DATE DEFAULT SYSDATE
+-- Tabela principal de parâmetros (usada pelo sistema CRUD)
+CREATE TABLE parametros (
+    variedade VARCHAR2(10),              -- Variedade do produto (ex: Arabica, Robusta)
+    epoca VARCHAR2(10),                  -- Época/sazonalidade (ex: Seca, Chuva)
+    processo VARCHAR2(10),               -- Processo aplicado (ex: Mecanico, Manual)
+    e_rec_m NUMBER(3,2),                 -- Parâmetro de eficiência (% decimal)
+    g_final_rec NUMBER,                  -- Grau final de recuperação (inteiro)
+    s_rec NUMBER(3,2),                   -- Parâmetro S de recuperação (% decimal)
+    g_to_rec NUMBER(3,2),                -- Grau TO de recuperação (% decimal)
+    l_to_rec NUMBER(3,2),                -- Parâmetro L TO de recuperação (% decimal)
+    rho_rec NUMBER(3,2),                 -- Densidade de recuperação (% decimal)
+    d_rec_kg_m NUMBER(3,2),              -- Densidade kg/m de recuperação (% decimal)
+    CONSTRAINT pk_parametros PRIMARY KEY (variedade, epoca, processo)
+);
+
+-- Tabela legada (PetShop) - mantida para compatibilidade
+CREATE TABLE petshop (
+    pet_id NUMBER GENERATED AS IDENTITY,
+    tipo_pet VARCHAR2(10),
+    nome_pet VARCHAR2(50),
+    idade NUMBER(20,2),
+    CONSTRAINT pk_petshop PRIMARY KEY (pet_id)
 );
 
 ```
@@ -221,6 +234,36 @@ resultados = buscar_por_criterios(dict_parametros,
                                 epoca="Seca")
 ```
 
+### **Sistema CRUD Oracle:**
+
+```python
+# Executar o sistema de manutenção Oracle
+python manutencao_oracle_paramentros.py
+
+# Exemplo de dados para cadastro:
+# Variedade: Arabica
+# Época: Seca  
+# Processo: Natural
+# e_rec_m: 0.85
+# g_final_rec: 95
+# s_rec: 0.12
+# g_to_rec: 0.78
+# l_to_rec: 0.65
+# rho_rec: 0.92
+# d_rec_kg_m: 1.25
+```
+
+**Estrutura dos parâmetros técnicos:**
+
+- 🌱 **variedade**: Tipo de café (Arabica, Robusta, etc.)
+- 📅 **epoca**: Sazonalidade (Seca, Umida)
+- ⚙️ **processo**: Método de processamento (Natural, Lavado, etc.)
+- 📊 **e_rec_m**: Eficiência de recuperação média (decimal)
+- 🎯 **g_final_rec**: Grau final de recuperação (inteiro)
+- 📈 **s_rec, g_to_rec, l_to_rec**: Parâmetros de recuperação específicos
+- 🧮 **rho_rec**: Densidade de recuperação
+- ⚖️ **d_rec_kg_m**: Densidade por kg/m
+
 ## 🔧 Solução de Problemas
 
 ### **Erro: Módulo 'oracledb' não encontrado**
@@ -252,7 +295,7 @@ pip install pandas>=2.2.0
 
 ## 🀽� Contribuidores
 
-- 🎓 **Durval (@dortad)** 
+- 🎓 **Durval (@dortad)**
 - 🏫 **Murilo**
 
 ---
