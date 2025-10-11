@@ -90,7 +90,7 @@ def mapear_dados_para_oracle(param_json):
             'g_final_rec': int(param_json['g_final_rec']),
             's_rec': float(param_json['s_rec']),
             'g_to_rec': float(param_json['g_to_rec']),
-            'l_to_rec': float(param_json['l_to_rec']),  # Nota: JSON usa 'L_to_rec' (maiúsculo)
+            'l_to_rec': float(param_json['l_to_rec']), 
             'rho_rec': float(param_json['rho_rec']),
             'd_rec_kg_m': float(param_json['d_rec_kg_m'])
         }
@@ -133,13 +133,13 @@ def verificar_dados_inseridos(conn):
             cursor.execute(sql_comando)
             
             resultados = cursor.fetchall()
-            print(f"\n Primeiros 5 registros inseridos:")
+            print(f"\n Primeiros 5 registros de parametros no Oracle:")
             print("-" * 70)
-            print("Variedade  | Época     | Processo  | E_rec_m | G_final")
+            print("Variedade  | Época      | Processo          | E_rec_m | G_final")
             print("-" * 70)
             
             for row in resultados:
-                print(f"{row[0]:<10} | {row[1]:<9} | {row[2]:<9} | {row[3]:7.2f} | {row[4]:7d}")
+                print(f"{row[0]:<10} | {row[1]:<10} | {row[2]:<10}        | {row[3]:7.2f} | {row[4]:7d}")
         
         cursor.close()
         
@@ -259,6 +259,7 @@ def manutencao_dados_oracle(conn, dicionario_parametros):
     registros_inseridos = 0
     registros_com_erro = 0
     registros_atualizados = 0
+    registros_duplicados = 0
     
 
 
@@ -338,7 +339,7 @@ def manutencao_dados_oracle(conn, dicionario_parametros):
         print(f" Taxa de sucesso: {percentual:.1f}%")
     
     cursor.close()
-    return registros_inseridos
+    return registros_inseridos, registros_atualizados, registros_com_erro, registros_duplicados
 
 # ========== FUNÇÃO PARA CARREGAR PARAMETROS NO ORACLE ==========
 def carregar_parametros_no_oracle(dict_parametros: dict, conn):
@@ -349,12 +350,9 @@ def carregar_parametros_no_oracle(dict_parametros: dict, conn):
         return False
 
 
-    registros_inseridos = manutencao_dados_oracle(conn, dict_parametros)
+    registros_inseridos, registros_atualizados, registros_com_erro, registros_duplicados = manutencao_dados_oracle(conn, dict_parametros)
 
-    if registros_inseridos > 0:
+    if registros_inseridos > 0 or registros_atualizados > 0:
         verificar_dados_inseridos(conn)
-        #print(f"\nProcesso concluído com sucesso!")
-        #print(f" {registros_inseridos} registros carregados na tabela Oracle")
-    else:
-        print(f"\n Nenhum registro novo foi inserido")
-        print(" Todos os registros já existem na tabela")
+        print(f"\nProcesso concluído com sucesso!")
+        return True
