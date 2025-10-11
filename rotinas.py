@@ -1,9 +1,77 @@
 # Importação dos módulos
 import os
+from unittest import case
 import oracledb
 import pandas as pd
 from datetime import datetime
 import json
+
+
+''' comando no oracle
+DROP TABLE PARAMETROS;
+  CREATE TABLE PARAMETROS 
+   (	"VARIEDADE" VARCHAR2(10 BYTE), 
+	"EPOCA" VARCHAR2(10 BYTE), 
+	"PROCESSO" VARCHAR2(10 BYTE), 
+	"E_REC_M" NUMBER(3,2), 
+	"G_FINAL_REC" NUMBER, 
+	"S_REC" NUMBER(3,2), 
+	"G_TO_REC" NUMBER(3,2), 
+	"L_TO_REC" NUMBER(3,2), 
+	"RHO_REC" NUMBER(3,2), 
+	"D_REC_KG_M" NUMBER(3,2), 
+	 CONSTRAINT "PK_PARAMETROS" PRIMARY KEY ("VARIEDADE", "EPOCA", "PROCESSO"))
+    
+'''
+# ========== FUNÇÃO PARA MAPEAR DADOS JSON → ORACLE ==========
+def seletor_parametros_sql(sql_acao: str) -> str:
+    match sql_acao.lower():
+        case "i":
+            # SQL de inserção
+            sql_comando = """
+                        INSERT INTO parametros (
+                            variedade, epoca, processo, e_rec_m, g_final_rec, 
+                            s_rec, g_to_rec, l_to_rec, rho_rec, d_rec_kg_m
+                        ) VALUES (
+                            :variedade, :epoca, :processo, :e_rec_m, :g_final_rec,
+                            :s_rec, :g_to_rec, :l_to_rec, :rho_rec, :d_rec_kg_m
+                        )
+                        """
+        case "a":
+            # SQL de alteração
+            sql_comando = """
+                    UPDATE parametros SET
+                        e_rec_m = :e_rec_m,
+                            g_final_rec = :g_final_rec,
+                            s_rec = :s_rec,
+                            g_to_rec = :g_to_rec,
+                            l_to_rec = :l_to_rec,
+                            rho_rec = :rho_rec,
+                            d_rec_kg_m = :d_rec_kg_m
+                        WHERE
+                            variedade = :variedade AND
+                            epoca = :epoca AND
+                            processo = :processo
+                    """
+        case "l":
+            # SQL de leitura
+            sql_comando = """
+                SELECT * FROM parametros
+                WHERE variedade = :variedade AND
+                      epoca = :epoca AND
+                      processo = :processo
+            """
+        case "v":
+            # SQL de verificação (exibe alguns registros)
+            sql_comando = """
+                SELECT variedade, epoca, processo, e_rec_m, g_final_rec 
+                FROM parametros 
+                WHERE ROWNUM <= 5
+                ORDER BY variedade, epoca, processo
+            """
+    return sql_comando
+ 
+
 # ========== FUNÇÃO PARA MAPEAR DADOS JSON → ORACLE ==========
 def mapear_dados_para_oracle(param_json):
     """
@@ -26,8 +94,13 @@ def mapear_dados_para_oracle(param_json):
             'rho_rec': float(param_json['rho_rec']),
             'd_rec_kg_m': float(param_json['d_rec_kg_m'])
         }
+        chave_oracle = {
+            'variedade': dados_oracle['variedade'],
+            'epoca': dados_oracle['epoca'],
+            'processo': dados_oracle['processo']
+        }
         
-        return dados_oracle
+        return dados_oracle, chave_oracle
         
     except KeyError as e:
         print(f" Campo obrigatório não encontrado no JSON: {e}")
@@ -52,12 +125,12 @@ def verificar_dados_inseridos(conn):
         
         if total > 0:
             # Mostra os primeiros 5 registros
-            cursor.execute("""
-                SELECT variedade, epoca, processo, e_rec_m, g_final_rec 
-                FROM parametros 
-                WHERE ROWNUM <= 5
-                ORDER BY variedade, epoca, processo
-            """)
+            # Executa a Leitura
+            sql_comando = ""
+
+            sql_comando = seletor_parametros_sql('v')     # ============ Seletor acao SQL ============ #
+
+            cursor.execute(sql_comando)
             
             resultados = cursor.fetchall()
             print(f"\n Primeiros 5 registros inseridos:")
@@ -73,44 +146,156 @@ def verificar_dados_inseridos(conn):
     except Exception as e:
         print(f" Erro ao verificar dados: {e}")
 
+
+
+# ========== FUNÇÃO PARA CONECTAR AO ORACLE ==========
+def conectar_oracle(tipo: str = 'producao'):
+    """Estabelece conexão com o banco Oracle"""
+    print("\n Conectando ao Oracle Database...")
+
+    if tipo.lower() == 'producao':
+        user = 'RM567007'
+        password = 'Fiap#2025'
+        dsn = 'oracle.fiap.com.br:1521/ORCL'   
+    elif tipo.lower() == 'teste':
+        user = 'RM567007'
+        password = 'Luanova100#'
+        dsn = 'localhost:1521/xe'
+
+    try:
+        # Configurações de conexão 
+        conn = oracledb.connect(
+            user=user, 
+            password=password, 
+            dsn=dsn
+        )
+        
+        print(" Conexão com Oracle estabelecida com sucesso!")
+        return conn
+        
+    except Exception as e:
+        print(f" Erro ao conectar com Oracle: {e}")
+        print(" Verifique suas credenciais e conectividade de rede")
+        return None
+# 
+# ========== FUNÇÃO PARA DESCONECTAR AO ORACLE ==========
+def desconectar_oracle(conn):
+    """Desconecta do banco Oracle"""
+    if conn:
+        try:
+            conn.close()
+            print(" Desconexão do Oracle estabelecida com sucesso!")
+        except Exception as e:
+            print(f" Erro ao desconectar do Oracle: {e}")
+
+
+        
+
+# ========== FUNÇÃO PARA CARREGAR DADOS JSON COMO DICIONÁRIO ==========
+def carregar_parametros_Json_como_dicionario():
+    """
+    Carrega os parâmetros do arquivo JSON e converte para dicionário
+    Chave: combinação de Variedade_Epoca_Processo
+    Valor: dicionário com todos os dados do parâmetro
+    """
+    #print(" Lendo arquivo parametros.json...")
+
+    try:
+        arquivo_json = "parametros.json"
+        
+        # Carregando o arquivo JSON para uma lista.
+        with open(arquivo_json, "r", encoding='utf-8') as file:
+            lista_original = json.load(file)
+
+        # Convertendo lista em dicionário
+        dicionario_parametros = {}
+        registros_duplicados = 0
+        
+        for i, param in enumerate(lista_original):
+            # Criando chave única combinando Variedade, Epoca e Processo
+            chave = f"{param['Variedade']}_{param['Epoca']}_{param['Processo']}"
+            
+            # Se a chave já existe, registra a ocorrencia da duplicação no contador registros_duplicados
+            chave_original = chave
+            contador = 1
+            while chave in dicionario_parametros:
+                #chave = f"{chave_original}_{contador}"
+                #contador += 1
+                registros_duplicados += 1
+            
+            # Adiciona o parâmetro no dicionário
+            dicionario_parametros[chave] = param
+
+        if registros_duplicados > 0:
+            print(f"  Registros com chaves duplicadas encontrados: {registros_duplicados}")
+            
+        return dicionario_parametros
+        
+    except FileNotFoundError:
+        print(" Arquivo parametros.json não encontrado!")
+        print(" Verifique se o arquivo existe no diretório pai")
+        return {}
+    except json.JSONDecodeError as e:
+        print(f" Erro ao decodificar JSON: {e}")
+        return {}
+    except Exception as e:
+        print(f" Erro inesperado ao carregar JSON: {e}")
+        return {}
+
+
+
+
+
+
+
 # ========== FUNÇÃO PARA INSERIR DADOS NO ORACLE ==========
-def inserir_dados_oracle(conn, dicionario_parametros):
-    """Insere todos os dados do dicionário na tabela Oracle"""
+
+def manutencao_dados_oracle(conn, dicionario_parametros):
+    """Insere/altera/lê os dados do dicionário na tabela Oracle"""
     
-    print(f"\n💾 Iniciando inserção de {len(dicionario_parametros)} registros...")
+    #print(f"\n Iniciando inserção de {len(dicionario_parametros)} registros...")
     
     cursor = conn.cursor()
     registros_inseridos = 0
     registros_com_erro = 0
-    registros_duplicados = 0
+    registros_atualizados = 0
     
-    # SQL de inserção
-    sql_insert = """
-        INSERT INTO parametros (
-            variedade, epoca, processo, e_rec_m, g_final_rec, 
-            s_rec, g_to_rec, l_to_rec, rho_rec, d_rec_kg_m
-        ) VALUES (
-            :variedade, :epoca, :processo, :e_rec_m, :g_final_rec,
-            :s_rec, :g_to_rec, :l_to_rec, :rho_rec, :d_rec_kg_m
-        )
-    """
-    
-    print("\n Progresso da inserção:")
-    print("-" * 50)
-    
+
+
     for i, (chave, param_json) in enumerate(dicionario_parametros.items(), 1):
         try:
-            # Mapeia os dados do JSON para o formato Oracle
-            dados_oracle = mapear_dados_para_oracle(param_json)
+            # Mapeia os dados do JSON para o formato da tabela do Oracle
+            dados_oracle, chave_oracle = mapear_dados_para_oracle(param_json)
             
             if dados_oracle is None:
                 print(f" Registro {i:3d}: Erro no mapeamento - {chave}")
                 registros_com_erro += 1
                 continue
                 
-            # Executa a inserção
-            cursor.execute(sql_insert, dados_oracle)
-            
+            # Executa a Leitura
+            sql_comando = seletor_parametros_sql('l')     # ============ Seletor acao leitura SQL ============ #
+
+            cursor.execute(sql_comando, chave_oracle)
+
+            # Consulta realizada para verificação de existência do registro
+
+            resultado = cursor.fetchone()
+
+            if resultado is None:
+                # Executa a Inserção
+                sql_comando = seletor_parametros_sql('i')    # ============ Seletor acao inserçãoSQL ============ #
+                cursor.execute(sql_comando, dados_oracle)
+                #print(f"  Registro {i:3d}: Inserido com sucesso - {chave}")
+            else:
+                # Executa a Alteração
+                sql_comando = seletor_parametros_sql('a')     # ============ Seletor acao alteração SQL ============ #
+                #print(f"  Registro {i:3d}: Já existe - Atualizando - {chave}")
+                cursor.execute(sql_comando, dados_oracle)
+                # Registro Já existe na tabela foi atualizado
+                registros_atualizados += 1
+                continue
+
+                       
             # Mostra progresso a cada 5 registros
             if i % 5 == 0 or i == len(dicionario_parametros):
                 print(f" Registro {i:3d}: {dados_oracle['variedade']}-{dados_oracle['epoca']}-{dados_oracle['processo']}")
@@ -145,7 +330,7 @@ def inserir_dados_oracle(conn, dicionario_parametros):
     print("=" * 50)
     print(f" Total de registros processados: {len(dicionario_parametros)}")
     print(f" Registros inseridos com sucesso: {registros_inseridos}")
-    print(f"  Registros duplicados (ignorados): {registros_duplicados}")
+    print(f" Registros alterados (atualizados): {registros_atualizados}")
     print(f" Registros com erro: {registros_com_erro}")
     
     if registros_inseridos > 0:
@@ -155,31 +340,21 @@ def inserir_dados_oracle(conn, dicionario_parametros):
     cursor.close()
     return registros_inseridos
 
-# ========== FUNÇÃO PARA CONECTAR AO ORACLE ==========
-def conectar_oracle():
-    """Estabelece conexão com o banco Oracle"""
-    print("\n Conectando ao Oracle Database...")
+# ========== FUNÇÃO PARA CARREGAR PARAMETROS NO ORACLE ==========
+def carregar_parametros_no_oracle(dict_parametros: dict, conn):
+    # 1. Carregar dados do JSON como dicionário
     
-    try:
-        # Configurações de conexão (mesmas do manutencao_oracle_paramentros.py)
-        conn = oracledb.connect(
-            user='RM567007', 
-            password='Fiap#2025', 
-            dsn='oracle.fiap.com.br:1521/ORCL'
-        )
-        
-        print(" Conexão com Oracle estabelecida com sucesso!")
-        return conn
-        
-    except Exception as e:
-        print(f" Erro ao conectar com Oracle: {e}")
-        print(" Verifique suas credenciais e conectividade de rede")
-        return None
-
-# ========== FUNÇÃO PARA CARREGAR DADOS JSON COMO DICIONÁRIO ==========
+    if not dict_parametros:
+        print("Não foi possível carregar os dados. Encerrando...")
+        return False
 
 
+    registros_inseridos = manutencao_dados_oracle(conn, dict_parametros)
 
-
-
-
+    if registros_inseridos > 0:
+        verificar_dados_inseridos(conn)
+        #print(f"\nProcesso concluído com sucesso!")
+        #print(f" {registros_inseridos} registros carregados na tabela Oracle")
+    else:
+        print(f"\n Nenhum registro novo foi inserido")
+        print(" Todos os registros já existem na tabela")
