@@ -18,7 +18,7 @@ dict_parametros = {}
 dict_parametros = carregar_parametros_Json_como_dicionario()
 
 # Conectar ao Oracle
-conn = conectar_oracle('producao')
+conn = conectar_oracle('teste')
 
 if not conn:
     print(" Não foi possível conectar ao Oracle. Encerrando...")

@@ -1,25 +1,22 @@
+#20251011
 # Importação dos módulos
 import os
 import oracledb
 import pandas as pd
+from datetime import datetime
+import json
+from rotinas import *
 
-''' comando no oracle
-DROP TABLE petshop;
 
-create table petshop
-(   pet_id number  GENERATED AS IDENTITY, 
-    tipo_pet varchar2(10),
-    nome_pet varchar2(50),
-    idade    number(20,2),
-    CONSTRAINT pk_petshop PRIMARY KEY (pet_id));
-    
-'''
+# Conectar ao Oracle
+conn = conectar_oracle('producao')
 
+if not conn:
+    print(" Não foi possível conectar ao Oracle. Encerrando...")
+    exit()
 # Try para tentativa de Conexão com o Banco de Dados
 try:
-    # Efetua a conexão com o Usuário no servidor
-    conn = oracledb.connect(user='RM567007', password='Fiap#2025', dsn='oracle.fiap.com.br:1521/ORCL')
-    # Cria as instruções para cada módulo
+
     inst_cadastro = conn.cursor()
     inst_consulta = conn.cursor()
     inst_alteracao = conn.cursor()
@@ -40,9 +37,9 @@ while conexao:
     # Limpa a tela via SO
     os.system('cls')
     # Apresenta o menu
-    print("------- CRUD - PETSHOP -------")
+    print("------- Opções -------")
     print("""
-1 - Cadastrar Pet
+1 - c:\Users\dorta\Downloads\calculadora_cana.py
 2 - Listar Pets
 3 - Alterar Pet
 4 - Excluir Pet

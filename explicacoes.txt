@@ -1,0 +1,55 @@
+
+Como interpretar os resultados da aba “Calculadora”
+
+A Calculadora transforma suas entradas operacionais (área, perdas, variedade, época e processo; além dos “overrides”) em indicadores produtivos para dimensionar o plantio por tolete ou por massa (d) e estimar a massa total de mudas. A lógica:
+
+1) Parâmetros efetivos (colunas N–T)
+   - E_usado (m): espaçamento entre linhas realmente usado. Override > 0 manda; senão, recomendado (Parametros) por Variedade|Epoca|Processo.
+   - G_final_usado, s_usado, g_to_usado, L_to_usado, rho_usado, d_usado: mesma regra (override se >0; senão recomendado).
+   Ideia-guia: aqui você congela os números que entram no cálculo.
+
+2) Densidades e quantidades (colunas U–Y)
+   - m_linhas_por_ha (m/ha) = 10000 / E_usado.
+   - gemas_plantadas_m (gemas/m) = G_final_usado / s_usado.
+   - toletes_por_m (toletes/m) = gemas_plantadas_m / g_to_usado.
+   - toletes_por_ha (toletes/ha) = toletes_por_m * m_linhas_por_ha.
+   Regra de bolso: aumentar g_to_usado reduz toletes_por_m; diminuir g_to_usado aumenta toletes_por_m.
+
+3) Massa por hectare (colunas Z–AB)
+   Dois caminhos (a planilha escolhe sozinha):
+   - massa_t_ha_tolete (t/ha) = (toletes_por_ha * L_to_usado * rho_usado) / 1000.
+   - massa_t_ha_por_d (t/ha)  = (m_linhas_por_ha * d_usado) / 1000.
+   Qual é usado?
+   - Se d_override > 0 → usa o caminho por d (massa_t_ha_por_d).
+   - Caso contrário → usa o caminho por tolete (massa_t_ha_tolete).
+   O resultado final desta etapa é massa_escolhida_t_ha (t/ha).
+
+4) Área efetiva e massa total (colunas AC–AE)
+   - Area_efetiva_ha (ha) = Area_ha * (1 - Perc_Manobra_%/100 - Perc_Trafego_%/100).
+   - massa_total_area_t (t) = massa_escolhida_t_ha * Area_efetiva_ha.
+   Insight: pequenas reduções nas perdas se convertem em toneladas na escala do projeto.
+
+5) Qualidade e aderência (colunas AF–AI)
+   - d_rec_kg_m (kg/m): referência da aba Parametros (pela mesma chave).
+   - desvio_d_% = |d_usado - d_rec| / d_rec.
+   - tolerancia_d_%: vem da aba Config (valores para Chuva e Seca).
+   - semaforo: “OK” quando desvio ≤ tolerância; “ATENCAO” quando passa.
+     Se persistir “ATENCAO”, ajuste d_usado (ou os componentes que o formam).
+
+Checklist rápido (30s)
+   1) Está dimensionando por tolete (default) ou por d (d_override > 0)?
+   2) massa_escolhida_t_ha condiz com a meta do talhão?
+   3) Area_efetiva_ha reflete a realidade de perdas?
+   4) massa_total_area_t é o número logístico (corte/transporte).
+   5) Semáforo OK? Se não, ajuste d ou parâmetros ligados a ele.
+
+Exemplos de uso
+   A) Sem d_override (por tolete): define G_final, s, g_to, L_to, rho → calcula toletes/ha e massa_t_ha_tolete → aplica perdas → massa_total_area_t.
+   B) Com d_override > 0 (por d): informa d_override (kg/m) → usa massa_t_ha_por_d → aplica perdas → massa_total_area_t.
+
+Dúvidas comuns
+   • Trocar Manual ↔ Mecanizado muda os números? Sim. Processo faz parte da chave (Variedade|Epoca|Processo).
+   • Semáforo em ATENCAO: ajuste d_usado (via d_override ou ajustando L_to e rho). Se o stand não fecha, revise G_final, s e g_to.
+   • Perdas altas: veja a aba Perdas_Explicadas (estimar melhor e aplicar boas práticas).
+
+Fim.

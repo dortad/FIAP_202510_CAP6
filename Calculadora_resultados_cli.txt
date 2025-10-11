@@ -1,0 +1,54 @@
+================================================================================
+🌾 RELATÓRIO DE CÁLCULOS - CALCULADORA DE CANA-DE-AÇÚCAR 🌾
+================================================================================
+📅 Data/Hora: 11/10/2025 às 16:32:58
+📊 Sistema: Calculadora CLI v8.3 (Oracle Integration)
+================================================================================
+
+📈 RESUMO EXECUTIVO
+----------------------------------------
+🔢 Total de linhas processadas: 1
+⚖️  Soma total de massa (t): 203.502
+📊 Média de massa por hectare: 22.120 t/ha
+🚦 Status dos cálculos:
+   🟢 OK (dentro da tolerância): 1
+   🟡 ATENÇÃO (fora da tolerância): 0
+   ⚪ N/A (sem dados suficientes): 0
+
+================================================================================
+
+📋 RESULTADOS DETALHADOS POR LINHA
+================================================================================
+
+🌱 LINHA 01
+------------------------------
+📝 Dados de entrada:
+   🌾 Variedade: CTC4
+   🌧️ Época: Chuva
+   🚜 Processo: Mecanizado
+   📏 Área total: 10.00 ha
+   ⚙️ Perda por manobra: 5.0%
+   🚛 Perda por tráfego: 3.0%
+
+📊 Resultados calculados:
+   🎯 Área efetiva: 9.20 ha
+   ⚖️ Massa por hectare: 22.120 t/ha
+   📦 Massa total da área: 203.502 t
+   🟢 Status: OK
+
+🔧 Parâmetros técnicos utilizados:
+   • Espaçamento (E): 1.5
+   • Gemas finais (Gf): 12.0
+   • Gemas por tolete (s): 0.62
+   • Gemas úteis (g): 2.8
+   • Comprimento tolete (L): 0.4
+   • Densidade (rho): 1.2
+   • Massa por metro (d): 2.4
+
+================================================================================
+💡 OBSERVAÇÕES:
+• Este relatório foi gerado automaticamente pela Calculadora de Cana v8.3
+• Os parâmetros técnicos são obtidos diretamente do banco Oracle
+• Status 🟢 OK: dentro da tolerância | 🟡 ATENÇÃO: fora da tolerância
+• Tolerâncias: Época Seca ≤ 5% | Época Chuva ≤ 8%
+================================================================================
