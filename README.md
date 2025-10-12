@@ -1,17 +1,38 @@
-# 🌾 Calculadora de Cana-de-Açúcar
+# FIAP - Faculdade de Informática e Administração Paulista 
 
-**Sistema especializado para cálculo de material vegetal (toletes/mudas) necessário para plantio de cana-de-açúcar**
+<p align="center">
+<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
+</p>
+
+<br>
+
+# Calculadora de Cana-de-Açúcar
+
+## CAP6 - Fase 2 (2025)
+
+## 👨‍🎓 Integrante: 
+- <a href="https://www.linkedin.com/in/dorta">João Paulo Dorta</a>
+
+## 👩‍🏫 Professor:
+### Coordenador
+- <a href="https://www.linkedin.com/company/fiap">Prof. FIAP</a>
 
 ![Python](https://img.shields.io/badge/Python-3.14.0-blue.svg)
 ![Oracle](https://img.shields.io/badge/Oracle-Database-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![FIAP](https://img.shields.io/badge/FIAP-CAP6_2025-purple.svg)
 
----
+## � Descrição
 
-## 📋 Visão Geral
+A **Calculadora de Cana-de-Açúcar** é um sistema especializado desenvolvido para o **CAP6 - Fase 2 (2025)** da FIAP, focado em auxiliar produtores e técnicos agrícolas no planejamento e dimensionamento preciso do plantio de cana-de-açúcar.
 
-A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar no **planejamento e dimensionamento do plantio** de cana-de-açúcar. O programa calcula a quantidade exata de material vegetal (toletes/mudas) necessária para plantar uma área específica, considerando diferentes variedades, épocas de plantio e métodos de cultivo.
+O sistema utiliza **algoritmos agronômicos avançados** para calcular a quantidade exata de material vegetal (toletes/mudas) necessária para plantar uma área específica, considerando múltiplas variáveis como variedades de cana, épocas de plantio, métodos de cultivo e condições do campo.
+
+Desenvolvido com integração **Oracle Database** e interface em Python, o programa oferece cálculos precisos baseados em parâmetros técnicos de instituições renomadas como RIDESA, CTC, IAC e Embrapa, garantindo confiabilidade e precisão nos resultados.
+
+### 🎯 Objetivo Principal
+
+**Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, proporcionando:
 
 ### 🎯 Objetivo Principal
 
@@ -62,52 +83,75 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 | **pandas**          | ≥2.2.0 | Manipulação de dados       |
 | **oracledb**        | ≥2.3.0 | Conectividade Oracle         |
 
----
+## 📁 Estrutura de pastas
 
-## 📁 Estrutura do Projeto
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+
+- **assets**: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens e logos.
+
+- **document**: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", foram adicionados documentos complementares e arquivos de exemplo.
+
+- **src**: Todo o código fonte criado para o desenvolvimento do projeto ao longo das fases do CAP6.
+
+- **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ```
 FIAP_202510_CAP6/
 │
-├── 📄 calculadora_cana_principal.py    # Programa principal
-├── 📄 funcoes_calculadora.py                # Funções de cálculo e relatórios
-├── 📄 rotinas_V2.py                         # Conexão Oracle e utilitários
-├── 📄 parametros.json                       # Parâmetros técnicos (dados agricolas)
-├── 📄 requirements.txt                      # Dependências do projeto
+├── � assets/                              # Recursos gráficos e imagens
+│   ├── logo-fiap.png                      # Logo oficial da FIAP
+│   └── README.md                          # Documentação dos assets
 │
-├── 📁 venv_Cap6/                           # Ambiente virtual Python
-├── 📁 __pycache__/                         # Cache Python
+├── 📁 document/                           # Documentação do projeto
+│   ├── documentacao.md                    # Documentação técnica completa
+│   ├── INDICE_DOCUMENTACAO.md             # Índice de navegação
+│   └── 📁 other/                          # Documentos complementares
+│       ├── fontes_info.md                 # Referências das variedades
+│       └── Calculadora_Cana_resultados.txt # Exemplo de saída
 │
-└── 📊 Resultados de exemplo:
-    └── Calculadora_Cana_resultados.txt
+├── 📁 src/                               # Código fonte
+│   ├── calculadora_cana_principal.py     # Programa principal
+│   ├── funcoes_calculadora.py            # Funções de cálculo
+│   ├── rotinas_V2.py                     # Integração Oracle
+│   ├── parametros.json                   # Parâmetros técnicos
+│   ├── requirements.txt                  # Dependências Python
+│   └── README.md                         # Documentação do código
+│
+├── 📁 template-main/                     # Template FIAP original
+├── 📁 venv_Cap6/                        # Ambiente virtual Python
+└── � README.md                         # Este arquivo
 ```
 
 ---
 
-## 🔧 Instalação e Configuração
+## 🔧 Como executar o código
 
-### 1️⃣ Pré-requisitos
+### Pré-requisitos
 
-- **Python 3.14.0** ou superior
-- **Oracle Database** configurado e acessível
+- **Python 3.10+** instalado no sistema
+- **Oracle Database** (opcional - sistema possui fallback)
 - **Git** para clone do repositório
 
-### 2️⃣ Clone do Repositório
+### Instalação e Execução
+
+#### 1️⃣ Clone e Navegação
 
 ```bash
 git clone https://github.com/dortad/FIAP_202510_CAP6.git
 cd FIAP_202510_CAP6
 ```
 
-### 3️⃣ Ambiente Virtual
+#### 2️⃣ Ambiente Virtual (Recomendado)
 
 ```bash
-# Windows
+# Criar ambiente virtual
 python -m venv venv_Cap6
-venv_Cap6\Scripts\activate
 
-# Linux/Mac
-python -m venv venv_Cap6
+# Ativar ambiente virtual
+# Windows:
+venv_Cap6\Scripts\activate
+# Linux/Mac:
+source venv_Cap6/bin/activate
 source venv_Cap6/bin/activate
 ```
 
@@ -303,12 +347,24 @@ python -m pytest tests/ -v
 - [ ] Dashboard de monitoramento
 - [ ] Integração com sistemas ERP
 
-### 🔮 Ideias Futuras
+## � Histórico de lançamentos
 
-- [ ] Machine Learning para otimização de parâmetros
-- [ ] Integração com dados climáticos
-- [ ] Aplicativo mobile
-- [ ] Análise de sustentabilidade
+* 2.0.0 - 12/10/2025
+    * Versão simplificada (somente relatórios TXT)
+    * Remoção de funcionalidades de fallback JSON
+    * Estruturação seguindo template FIAP
+    * Documentação técnica completa
+    
+* 1.1.0 - 10/10/2025
+    * Adição de múltiplos formatos de saída (TXT, Excel, PDF)
+    * Sistema de fallback JSON implementado
+    * Comentários e documentação das funções
+    
+* 1.0.0 - 08/10/2025
+    * Versão inicial do sistema
+    * Cálculos básicos de material vegetal
+    * Integração com Oracle Database
+    * Interface de menu interativa
 
 ---
 
@@ -321,20 +377,10 @@ python -m pytest tests/ -v
 
 ---
 
-## 📄 Licença
+## � Licença
 
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/dortad/FIAP_202510_CAP6">Calculadora de Cana-de-Açúcar</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ---
 
-## 🏫 Informações Acadêmicas
-
-- **Instituição**: FIAP (Faculdade de Informática e Administração Paulista)
-- **Curso**: Análise e Desenvolvimento de Sistemas
-- **Disciplina**: CAP6 - Capstone Project
-- **Período**: 2025.1 (Fase 2)
-- **Semestre**: 09-10/2025
-
-![FIAP Logo](https://img.shields.io/badge/FIAP-2025-blueviolet.svg?style=for-the-badge)
-
-</div>
+**🎓 Desenvolvido para FIAP - CAP6 Fase 2 (2025)**
