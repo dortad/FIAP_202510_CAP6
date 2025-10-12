@@ -1,5 +1,5 @@
 # Dependências do projeto FIAP_202510_CAP6
-# Sistema CRUD de Parâmetros e Manipulação JSON
+# Calculadora Agrícola de Cana-de-açúcar com Integração Oracle
 
 # ==============================================================================
 # DEPENDÊNCIAS PRINCIPAIS
@@ -11,16 +11,15 @@ oracledb>=2.3.0
 # Manipulação e análise de dados (versão compatível com Python 3.14)
 pandas>=2.2.0
 
-# Manipulação de arquivos Excel
-openpyxl>=3.1.0
-xlsxwriter>=3.1.0
-
 # ==============================================================================
-# BIBLIOTECAS PADRÃO PYTHON (não precisam ser instaladas)
+# BIBLIOTECAS PADRÃO PYTHON (já incluídas na instalação)
 # ==============================================================================
-# json - manipulação de arquivos JSON
 # os - operações do sistema operacional
-# sys - informações do sistema Python
+# json - manipulação de arquivos JSON  
+# datetime - manipulação de datas e timestamps
+# typing - type hints (Tuple, Dict, List)
+# unicodedata - normalização e processamento de texto Unicode
+# unittest - framework de testes (usado em rotinas_V2.py)
 
 # ==============================================================================
 # DEPENDÊNCIAS DE DESENVOLVIMENTO (opcional)
@@ -43,12 +42,20 @@ xlsxwriter>=3.1.0
 # notebook>=6.5.0
 
 # ==============================================================================
+# FUNCIONALIDADES SUPORTADAS PELAS DEPENDÊNCIAS
+# ==============================================================================
+# oracledb: Conectividade com Oracle Database, gerenciamento de parâmetros
+# pandas: Processamento de dados, cálculos de produtividade e relatórios
+
+# ==============================================================================
 # INFORMAÇÕES DO AMBIENTE
 # ==============================================================================
 # Este projeto foi desenvolvido com:
 # - Python 3.14.0
 # - Sistema operacional: Windows
 # - Ambiente virtual: venv_Cap6
+# - Funcionalidades: Calculadora agrícola, relatórios TXT,
+#   integração Oracle, análise de produtividade, status semáforo
 
 # ==============================================================================
 # INSTALAÇÃO
@@ -58,3 +65,6 @@ xlsxwriter>=3.1.0
 #
 # Para instalar dependências de desenvolvimento também:
 # pip install -r requirements.txt black flake8 pytest jupyter
+#
+# Comando rápido de instalação:
+# pip install oracledb pandas

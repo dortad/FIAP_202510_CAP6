@@ -150,7 +150,29 @@ def verificar_dados_inseridos(conn):
 
 # ========== FUNÇÃO PARA CONECTAR AO ORACLE ==========
 def conectar_oracle(tipo: str = 'producao'):
-    """Estabelece conexão com o banco Oracle"""
+    """
+    *** FUNÇÃO DE CONEXÃO ORACLE ***
+    Estabelece conexão com o banco Oracle Database (produção ou teste).
+    
+    Gerencia configurações de conexão para diferentes ambientes:
+    - Produção: Servidor FIAP oficial
+    - Teste: Configurações de desenvolvimento
+    
+    Args:
+        tipo (str): Tipo de conexão ('producao' ou 'teste')
+        
+    Returns:
+        oracledb.Connection: Objeto de conexão Oracle ou None se falhar
+        
+    Usado em:
+        - calculadora_cana_principal_v1.1.py: load_params_from_oracle_v2()
+        - sincronizar_json_oracle()
+        - Todas as operações que requerem acesso ao banco
+        
+    Configurações:
+        - Produção: oracle.fiap.com.br:1521/ORCL
+        - Teste: Configurações locais/desenvolvimento
+    """
     print("\n Conectando ao Oracle Database...")
 
     if tipo.lower() == 'producao':
@@ -194,9 +216,27 @@ def desconectar_oracle(conn):
 # ========== FUNÇÃO PARA CARREGAR DADOS JSON COMO DICIONÁRIO ==========
 def carregar_parametros_Json_como_dicionario():
     """
-    Carrega os parâmetros do arquivo JSON e converte para dicionário
-    Chave: combinação de Variedade_Epoca_Processo
-    Valor: dicionário com todos os dados do parâmetro
+    *** FUNÇÃO DE FALLBACK JSON ***
+    Carrega os parâmetros do arquivo JSON e converte para dicionário.
+    
+    Utilizada como fallback quando:
+    - Tabela Oracle está vazia
+    - Conexão Oracle falha
+    - Sincronização inicial necessária
+    
+    Estrutura de retorno:
+    - Chave: combinação "Variedade_Epoca_Processo" 
+    - Valor: dicionário com todos os parâmetros técnicos
+    
+    Returns:
+        dict: Dicionário com parâmetros ou None se erro
+        
+    Usado em:
+        - load_params_from_oracle_v2() - Quando Oracle vazio
+        - sincronizar_json_oracle() - Para sincronização
+        - Inicialização do sistema
+        
+    Arquivo lido: parametros.json (338 registros de variedades)
     """
     #print(" Lendo arquivo parametros.json...")
 
