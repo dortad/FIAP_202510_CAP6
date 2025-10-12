@@ -131,3 +131,6 @@ dmypy.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Pasta de memória local (não versionada)
+memoria/
