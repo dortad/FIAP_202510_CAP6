@@ -133,4 +133,5 @@ ehthumbs.db
 Thumbs.db
 
 # Pasta de memória local (não versionada)
+# Memória local de projetos, caches, etc.
 memoria/
