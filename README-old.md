@@ -1,218 +1,111 @@
-# FIAP - Faculdade de Informática e Administração Paulista # FIAP - Faculdade de Informática e Administração Paulista
+# FIAP - Faculdade de Informática e Administração Paulista
 
+<p align="center">
+<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
+</p>
 
+<br>
 
-<p align="center"><p align="center">
+# Calculadora de Cana-de-Açúcar
 
-<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a><a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
+## CAP6 - Fase 2 (2025)
 
-</p></p>
-
-
-
-<br><br>
-
-
-
-# Calculadora de Cana-de-Açúcar# Calculadora de Cana-de-Açúcar
-
-
-
-## CAP6 - Fase 2 (2025)## CAP6 - Fase 2 (2025)
-
-
-
-## 👨‍🎓 Integrantes: ## 👨‍🎓 Integrante:
-
-- <a href="https://www.linkedin.com/in/seu-perfil">Seu Nome Completo</a>
+## 👨‍🎓 Integrante:
 
 - `<a href="https://www.linkedin.com/in/seu-perfil">`Seu Nome Completo`</a>`
 
-## 👩‍🏫 Professores:
+## 👩‍🏫 Professor:
 
-### Tutor(a) ## 👩‍🏫 Professor:
-
-- <a href="https://www.linkedin.com/company/fiap">Prof. FIAP</a>
-
-### Coordenador(a)### Coordenador
-
-- <a href="https://www.linkedin.com/company/fiap">Prof. FIAP</a>
+### Coordenador
 
 - `<a href="https://www.linkedin.com/company/fiap">`Prof. FIAP`</a>`
 
-
-
-## 📜 Descrição![Python](https://img.shields.io/badge/Python-3.14.0-blue.svg)
-
+![Python](https://img.shields.io/badge/Python-3.14.0-blue.svg)
 ![Oracle](https://img.shields.io/badge/Oracle-Database-red.svg)
-
-A **Calculadora de Cana-de-Açúcar** é um sistema especializado desenvolvido para o **CAP6 - Fase 2 (2025)** da FIAP, focado em auxiliar produtores e técnicos agrícolas no planejamento e dimensionamento preciso do plantio de cana-de-açúcar.![License](https://img.shields.io/badge/License-MIT-green.svg)
-
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![FIAP](https://img.shields.io/badge/FIAP-CAP6_2025-purple.svg)
-
-O sistema utiliza **algoritmos agronômicos avançados** para calcular a quantidade exata de material vegetal (toletes/mudas) necessária para plantar uma área específica, considerando múltiplas variáveis como variedades de cana, épocas de plantio, métodos de cultivo e condições do campo.
 
 ## � Descrição
 
-Desenvolvido com integração **Oracle Database** e interface em Python, o programa oferece cálculos precisos baseados em parâmetros técnicos de instituições renomadas como RIDESA, CTC, IAC e Embrapa, garantindo confiabilidade e precisão nos resultados.
-
 A **Calculadora de Cana-de-Açúcar** é um sistema especializado desenvolvido para o **CAP6 - Fase 2 (2025)** da FIAP, focado em auxiliar produtores e técnicos agrícolas no planejamento e dimensionamento preciso do plantio de cana-de-açúcar.
-
-**Objetivo Principal:** Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica, garantindo otimização do uso de material vegetal, redução de desperdícios, controle de qualidade do plantio e planejamento logístico eficiente.
 
 O sistema utiliza **algoritmos agronômicos avançados** para calcular a quantidade exata de material vegetal (toletes/mudas) necessária para plantar uma área específica, considerando múltiplas variáveis como variedades de cana, épocas de plantio, métodos de cultivo e condições do campo.
 
-O sistema possui interface interativa de console, suporte a múltiplas variedades de cana, geração de relatórios em formato texto e integração completa com banco de dados Oracle para armazenamento de parâmetros técnicos.
-
 Desenvolvido com integração **Oracle Database** e interface em Python, o programa oferece cálculos precisos baseados em parâmetros técnicos de instituições renomadas como RIDESA, CTC, IAC e Embrapa, garantindo confiabilidade e precisão nos resultados.
 
+### 🎯 Objetivo Principal
 
+**Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, proporcionando:
 
-## 📁 Estrutura de pastas### 🎯 Objetivo Principal
+### 🎯 Objetivo Principal
 
+**Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, garantindo:
 
-
-Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:**Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, proporcionando:
-
-
-
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.### 🎯 Objetivo Principal
-
-
-
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.**Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, garantindo:
-
-
-
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.- ✅ Otimização do uso de material vegetal
-
+- ✅ Otimização do uso de material vegetal
 - ✅ Redução de desperdícios
-
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).- ✅ Controle de qualidade do plantio
-
+- ✅ Controle de qualidade do plantio
 - ✅ Planejamento logístico eficiente
-
-## 🔧 Como executar o código
 
 ---
 
-**Pré-requisitos:**
+## 🚀 Funcionalidades
 
-- Python 3.10 ou superior## 🚀 Funcionalidades
+### 📊 Cálculos Técnicos
 
-- Oracle Database (opcional - sistema possui fallback JSON)
-
-- Bibliotecas: pandas, oracledb, xlsxwriter### 📊 Cálculos Técnicos
-
-
-
-**Instalação:**- **Densidade de plantio** (toletes por hectare)
-
+- **Densidade de plantio** (toletes por hectare)
 - **Massa de material vegetal** necessária
+- **Controle de qualidade** com sistema semáforo
+- **Análise de produtividade** por linha de plantio
+- **Consideração de perdas** por manobras e tráfego
 
-1. **Clone o repositório:**- **Controle de qualidade** com sistema semáforo
+### 📈 Relatórios Completos
 
-   ```bash- **Análise de produtividade** por linha de plantio
+- **Relatório TXT**: Detalhado com explicações técnicas e análise completa
 
-   git clone https://github.com/dortad/FIAP_202510_CAP6.git- **Consideração de perdas** por manobras e tráfego
+### 🔗 Integração Oracle
 
-   cd FIAP_202510_CAP6
-
-   ```### 📈 Relatórios Completos
-
-
-
-2. **Ative o ambiente virtual:**- **Relatório TXT**: Detalhado com explicações técnicas e análise completa
-
-   ```bash
-
-   # Windows### 🔗 Integração Oracle
-
-   venv_Cap6\Scripts\activate
-
-   - Conexão com banco de dados Oracle
-
-   # Linux/Mac- Gerenciamento de parâmetros técnicos
-
-   source venv_Cap6/bin/activate- Consulta automática de especificações por variedade
-
-   ```
+- Conexão com banco de dados Oracle
+- Gerenciamento de parâmetros técnicos
+- Consulta automática de especificações por variedade
 
 ### ⚡ Interface Amigável
 
-3. **Instale as dependências:**
-
-   ```bash- Menu interativo no terminal
-
-   pip install -r src/requirements.txt- Validação de entrada de dados
-
-   ```- Mensagens de status claras
-
+- Menu interativo no terminal
+- Validação de entrada de dados
+- Mensagens de status claras
 - Suporte a múltiplas execuções
 
-4. **Execute o programa:**
+---
 
-   ```bash---
+## 🛠️ Tecnologias Utilizadas
 
-   python calculadora_cana_principal.py
-
-   ```## 🛠️ Tecnologias Utilizadas
-
-
-
-**Configuração Oracle (opcional):**| Tecnologia                | Versão | Função                     |
-
-- Configure as credenciais em `src/rotinas_V2.py`| ------------------------- | ------- | ---------------------------- |
-
-- O sistema funciona sem Oracle usando dados JSON locais| **Python**          | 3.14.0  | Linguagem principal          |
-
+| Tecnologia                | Versão | Função                     |
+| ------------------------- | ------- | ---------------------------- |
+| **Python**          | 3.14.0  | Linguagem principal          |
 | **Oracle Database** | -       | Armazenamento de parâmetros |
-
 | **pandas**          | ≥2.2.0 | Manipulação de dados       |
+| **oracledb**        | ≥2.3.0 | Conectividade Oracle         |
 
-## 🗃 Histórico de lançamentos| **oracledb**        | ≥2.3.0 | Conectividade Oracle         |
+## 📁 Estrutura de pastas
 
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
+- **assets**: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens e logos.
+- **document**: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", foram adicionados documentos complementares e arquivos de exemplo.
+- **src**: Todo o código fonte criado para o desenvolvimento do projeto ao longo das fases do CAP6.
+- **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-* 2.0.0 - 12/10/2025## 📁 Estrutura de pastas
-
-    * Reestruturação completa seguindo template FIAP
-
-    * Programa principal movido para raiz do projetoDentre os arquivos e pastas presentes na raiz do projeto, definem-se:
-
-    * Documentação técnica completa
-
-    * Ajustes nos paths de importação- **assets**: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens e logos.
-
-* 1.1.0 - 10/10/2025- **document**: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", foram adicionados documentos complementares e arquivos de exemplo.
-
-    * Integração Oracle Database implementada- **src**: Todo o código fonte criado para o desenvolvimento do projeto ao longo das fases do CAP6.
-
-    * Sistema de fallback JSON funcional- **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
-
-    * Comentários e documentação das funções
-
-    * Melhorias na interface de usuário```
-
-* 1.0.0 - 08/10/2025FIAP_202510_CAP6/
-
-    * Versão inicial do sistema│
-
-    * Cálculos básicos de plantio├── � assets/                              # Recursos gráficos e imagens
-
-    * Suporte a múltiplas variedades│   ├── logo-fiap.png                      # Logo oficial da FIAP
-
-    * Interface de menu interativa│   └── README.md                          # Documentação dos assets
-
-    * Geração de relatórios em texto│
-
+```
+FIAP_202510_CAP6/
+│
+├── � assets/                              # Recursos gráficos e imagens
+│   ├── logo-fiap.png                      # Logo oficial da FIAP
+│   └── README.md                          # Documentação dos assets
+│
 ├── 📁 document/                           # Documentação do projeto
-
-## 📋 Licença│   ├── documentacao.md                    # Documentação técnica completa
-
+│   ├── documentacao.md                    # Documentação técnica completa
 │   ├── INDICE_DOCUMENTACAO.md             # Índice de navegação
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/dortad/FIAP_202510_CAP6">Calculadora de Cana-de-Açúcar</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>│   └── 📁 other/                          # Documentos complementares
+│   └── 📁 other/                          # Documentos complementares
 │       ├── fontes_info.md                 # Referências das variedades
 │       └── Calculadora_Cana_resultados.txt # Exemplo de saída
 │
