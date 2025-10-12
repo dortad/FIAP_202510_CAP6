@@ -21,8 +21,8 @@ def clear_screen():
     - Linux/Mac: 'clear'
     
     Usado em:
-    - calculadora_cana_principal_v1.1.py: menu_inicial() - linha 210
-    - calculadora_cana_principal_v1.1.py: main() - linha 268
+    - calculadora_cana_principal.py: menu_inicial() - linha 210
+    - calculadora_cana_principal.py: main() - linha 268
     
     Returns:
         None: Executa comando do sistema para limpar tela
@@ -72,7 +72,7 @@ def norm_key(s: str) -> str:
         
     Usado em:
         - compute_row() - Para criar chaves de busca de parâmetros
-        - calculadora_cana_principal_v1.1.py - Verificação de combinações
+        - calculadora_cana_principal.py - Verificação de combinações
         - Mapeamento Variedade|Epoca|Processo -> Parâmetros
         
     Exemplo:
@@ -245,7 +245,7 @@ def compute_row(row: dict, PARAMS: dict, TOL_CHUVA: float, TOL_SECA: float) -> d
         dict: Resultados calculados com todas as métricas agronômicas
         
     Usado em:
-        - calculadora_cana_principal_v1.1.py: main() - linha 406
+        - calculadora_cana_principal.py: main() - linha 406
         
     Fórmulas principais:
         - metros_fileira/ha = 10.000 / espaçamento
@@ -643,7 +643,7 @@ def gerar_txt(df: pd.DataFrame, resumo: dict, saida_txt: str = "Calculadora_rela
         None: Salva arquivo TXT no disco
         
     Usado em:
-        - calculadora_cana_principal_v1.1.py: main() - linha 495
+        - calculadora_cana_principal.py: main() - linha 495
         
     Arquivo gerado contém ~40+ seções com análise completa dos resultados.
     """

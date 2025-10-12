@@ -64,7 +64,7 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 ```
 FIAP_202510_CAP6/
 │
-├── 📄 calculadora_cana_principal_v1.1.py    # Programa principal
+├── 📄 calculadora_cana_principal.py    # Programa principal
 ├── 📄 funcoes_calculadora.py                # Funções de cálculo e relatórios
 ├── 📄 rotinas_V2.py                         # Conexão Oracle e utilitários
 ├── 📄 parametros.json                       # Parâmetros técnicos (fallback)
@@ -74,7 +74,7 @@ FIAP_202510_CAP6/
 ├── 📁 __pycache__/                         # Cache Python
 │
 └── 📊 Resultados de exemplo:
-    └── Calculadora_Cana_v1_1_resultados.txt
+    └── Calculadora_Cana_resultados.txt
 ```
 
 ---
@@ -138,7 +138,7 @@ DB_CONFIG = {
 ### Execução Básica
 
 ```bash
-python calculadora_cana_principal_v1.1.py
+python calculadora_cana_principal.py
 ```
 
 ### Menu Principal
@@ -241,7 +241,7 @@ O status indica se o cálculo está dentro das tolerâncias técnicas:
 ### Execução de Testes
 ```bash
 # Teste com dados de exemplo
-python calculadora_cana_principal_v1.1.py
+python calculadora_cana_principal.py
 
 # Validação com parâmetros conhecidos
 python -m pytest tests/ -v
@@ -275,7 +275,8 @@ python -m pytest tests/ -v
 
 ## 📚 Documentação Adicional
 
-- 📖 **[O_que_faz_o_programa.md](O_que_faz_o_programa.md)**: Explicação detalhada das funcionalidades
+- � **[documentacao.md](documentacao.md)**: Documentação técnica completa com mapeamento de funções
+- �📖 **[O_que_faz_o_programa.md](O_que_faz_o_programa.md)**: Explicação detalhada das funcionalidades
 - 🔧 **[requirements.txt](requirements.txt)**: Lista completa de dependências
 - 📊 **[parametros.json](parametros.json)**: Estrutura de parâmetros técnicos
 

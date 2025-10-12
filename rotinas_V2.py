@@ -165,7 +165,7 @@ def conectar_oracle(tipo: str = 'producao'):
         oracledb.Connection: Objeto de conexão Oracle ou None se falhar
         
     Usado em:
-        - calculadora_cana_principal_v1.1.py: load_params_from_oracle_v2()
+        - calculadora_cana_principal.py: load_params_from_oracle_v2()
         - sincronizar_json_oracle()
         - Todas as operações que requerem acesso ao banco
         
