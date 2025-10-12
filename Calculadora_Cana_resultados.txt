@@ -1,0 +1,110 @@
+================================================================================
+RELATORIO DE CALCULOS - CALCULADORA DE CANA-DE-ACUCAR
+================================================================================
+Data/Hora: 12/10/2025 as 16:41:03
+Sistema: Calculadora Cana de Açúcar (Oracle/Json/TXT Integraçao)
+================================================================================
+
+[RESUMO] EXECUTIVO
+----------------------------------------
+Total de linhas processadas: 1
+Soma total de massa (t): 203.502
+Media de massa por hectare: 22.120 t/ha
+Status dos calculos:
+   [OK] (dentro da tolerancia): 1
+   [ATENCAO] (fora da tolerancia): 0
+   [N/A] (sem dados suficientes): 0
+
+Produtividade por linha:
+   Linha 01: CTC4 [MEC] -> 22.120 t/ha | Area: 9.20 ha | Total: 203.502 t [OK]
+
+================================================================================
+
+[RESULTADOS] DETALHADOS POR LINHA
+================================================================================
+
+[LINHA] 01
+------------------------------
+Dados de entrada:
+   Variedade: CTC4
+   [CHUVA] Epoca: Chuva
+   [MEC] Processo: Mecanizado
+   Area total: 10.00 ha
+   Perda por manobra: 5.0%
+   Perda por trafego: 3.0%
+
+Resultados calculados:
+   Area efetiva: 9.20 ha
+   Massa por hectare: 22.120 t/ha
+   Massa total da area: 203.502 t
+   Status: [OK] OK
+
+Parametros tecnicos utilizados:
+   • Espacamento (E): 1.5
+   • Gemas finais (Gf): 12
+   • Gemas por tolete (s): 0.62
+   • Gemas uteis (g): 2.8
+   • Comprimento tolete (L): 0.4
+   • Densidade (rho): 1.2
+   • Massa por metro (d): 2.4
+
+================================================================================
+EXPLICACAO DO STATUS/SEMAFORO
+================================================================================
+
+[CONCEITO] O que e o Status/Semaforo?
+--------------------------------------------------
+O Status e um sistema de CONTROLE DE QUALIDADE que verifica se
+a quantidade de material vegetal calculada esta dentro dos
+PADROES TECNICOS RECOMENDADOS para aquela variedade/epoca/processo.
+
+[COMO FUNCIONA] Calculo do Status
+--------------------------------------------------
+1. O programa calcula a massa por metro (d_usado) baseada nos parametros
+2. Compara com a massa recomendada (d) do banco Oracle
+3. Calcula o DESVIO PERCENTUAL entre estes valores
+4. Verifica se esta dentro da TOLERANCIA permitida
+
+[FORMULA] Calculo do Desvio
+--------------------------------------------------
+desvio_d = |d_usado - d_recomendado| / d_recomendado
+Onde:
+  • d_usado = massa calculada pelo programa (kg/m)
+  • d_recomendado = valor de referencia do Oracle (kg/m)
+
+[TOLERANCIAS] Limites por Epoca
+--------------------------------------------------
+• EPOCA SECA: ate 5% de desvio (TOL_SECA = 0.05)
+• EPOCA CHUVA: ate 8% de desvio (TOL_CHUVA = 0.08)
+
+Razao: Na epoca de chuva ha maior variabilidade nas
+condicoes de campo, por isso a tolerancia e maior.
+
+[RESULTADOS] Possiveis Status
+--------------------------------------------------
+[OK] = Desvio <= Tolerancia
+     → Plantio esta DENTRO das especificacoes tecnicas
+     → Pode prosseguir sem ajustes
+
+[ATENCAO] = Desvio > Tolerancia
+     → Plantio esta FORA das especificacoes
+     → REQUER REVISAO dos parametros ou processo
+
+[N/A] = Dados insuficientes
+     → Nao foi possivel calcular o desvio
+     → Faltam parametros no banco Oracle
+
+[IMPORTANCIA] Por que o Status e Crucial?
+--------------------------------------------------
+• QUALIDADE: Garante plantio dentro dos padroes tecnicos
+• ECONOMIA: Evita desperdicio de material vegetal
+• PRODUTIVIDADE: Stand adequado resulta em melhor producao
+• RASTREABILIDADE: Documenta conformidade tecnica
+
+================================================================================
+[OBSERVACOES GERAIS]:
+• Este relatorio foi gerado automaticamente pela Calculadora de Cana v8.4
+• Os parametros tecnicos sao obtidos diretamente do banco Oracle
+• O Status e um SEMAFORO DE QUALIDADE AGRONOMICA baseado em padroes cientificos
+• Valores fora da tolerancia indicam necessidade de ajuste tecnico
+================================================================================

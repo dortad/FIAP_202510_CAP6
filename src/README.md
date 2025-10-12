@@ -5,7 +5,7 @@ Esta pasta contém todos os arquivos de código fonte do projeto desenvolvido ao
 ## 📂 Estrutura dos Arquivos
 
 ### Arquivos Principais
-- **`calculadora_cana_principal.py`** - Programa principal com menu e orquestração do sistema
+- **`funcoes_calculadora.py`** - Funções auxiliares e cálculos do sistema
 - **`funcoes_calculadora.py`** - Biblioteca completa de cálculos agronômicos e interface
 - **`rotinas_V2.py`** - Integração com Oracle Database e operações de dados
 
@@ -21,11 +21,11 @@ Esta pasta contém todos os arquivos de código fonte do projeto desenvolvido ao
    ```
 
 2. **Executar o programa:**
-   ```bash
+```bash
+   # Execute o programa principal da pasta raiz:
+   cd ..
    python calculadora_cana_principal.py
-   ```
-
-## 🔧 Pré-requisitos
+```## 🔧 Pré-requisitos
 
 - Python 3.10+
 - Oracle Database (opcional - sistema possui fallback JSON)

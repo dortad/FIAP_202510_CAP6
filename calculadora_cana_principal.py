@@ -17,7 +17,12 @@ Tabela: parametros
 """
 
 import os
+import sys
 import pandas as pd
+
+# Adicionar a pasta src ao path para importar os módulos
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
 from rotinas_V2 import *
 from funcoes_calculadora import *
 

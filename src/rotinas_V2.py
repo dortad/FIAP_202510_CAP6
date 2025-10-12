@@ -237,7 +237,9 @@ def carregar_parametros_Json_como_dicionario():
     #print(" Lendo arquivo parametros.json...")
 
     try:
-        arquivo_json = "parametros.json"
+        # Buscar o arquivo parametros.json na mesma pasta do script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        arquivo_json = os.path.join(script_dir, "parametros.json")
         
         # Carregando o arquivo JSON para uma lista.
         with open(arquivo_json, "r", encoding='utf-8') as file:

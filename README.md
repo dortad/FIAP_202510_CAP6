@@ -1,4 +1,4 @@
-# FIAP - Faculdade de Informática e Administração Paulista 
+# FIAP - Faculdade de Informática e Administração Paulista
 
 <p align="center">
 <a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
@@ -10,12 +10,15 @@
 
 ## CAP6 - Fase 2 (2025)
 
-## 👨‍🎓 Integrante: 
-- <a href="https://www.linkedin.com/in/seu-perfil">Seu Nome Completo</a>
+## 👨‍🎓 Integrante:
+
+- `<a href="https://www.linkedin.com/in/seu-perfil">`Seu Nome Completo`</a>`
 
 ## 👩‍🏫 Professor:
+
 ### Coordenador
-- <a href="https://www.linkedin.com/company/fiap">Prof. FIAP</a>
+
+- `<a href="https://www.linkedin.com/company/fiap">`Prof. FIAP`</a>`
 
 ![Python](https://img.shields.io/badge/Python-3.14.0-blue.svg)
 ![Oracle](https://img.shields.io/badge/Oracle-Database-red.svg)
@@ -88,11 +91,8 @@ Desenvolvido com integração **Oracle Database** e interface em Python, o progr
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - **assets**: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens e logos.
-
 - **document**: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", foram adicionados documentos complementares e arquivos de exemplo.
-
 - **src**: Todo o código fonte criado para o desenvolvimento do projeto ao longo das fases do CAP6.
-
 - **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ```
@@ -109,13 +109,14 @@ FIAP_202510_CAP6/
 │       ├── fontes_info.md                 # Referências das variedades
 │       └── Calculadora_Cana_resultados.txt # Exemplo de saída
 │
-├── 📁 src/                               # Código fonte
-│   ├── calculadora_cana_principal.py     # Programa principal
+├── 📁 src/                               # Código fonte auxiliar
 │   ├── funcoes_calculadora.py            # Funções de cálculo
 │   ├── rotinas_V2.py                     # Integração Oracle
 │   ├── parametros.json                   # Parâmetros técnicos
 │   ├── requirements.txt                  # Dependências Python
 │   └── README.md                         # Documentação do código
+│
+├── calculadora_cana_principal.py         # 🚀 PROGRAMA PRINCIPAL
 │
 ├── 📁 template-main/                     # Template FIAP original
 ├── 📁 venv_Cap6/                        # Ambiente virtual Python
@@ -350,21 +351,22 @@ python -m pytest tests/ -v
 ## � Histórico de lançamentos
 
 * 2.0.0 - 12/10/2025
-    * Versão simplificada (somente relatórios TXT)
-    * Remoção de funcionalidades de fallback JSON
-    * Estruturação seguindo template FIAP
-    * Documentação técnica completa
-    
+
+  * Versão simplificada (somente relatórios TXT)
+  * Remoção de funcionalidades de fallback JSON
+  * Estruturação seguindo template FIAP
+  * Documentação técnica completa
 * 1.1.0 - 10/10/2025
-    * Adição de múltiplos formatos de saída (TXT, Excel, PDF)
-    * Sistema de fallback JSON implementado
-    * Comentários e documentação das funções
-    
+
+  * Adição de múltiplos formatos de saída (TXT, Excel, PDF)
+  * Sistema de fallback JSON implementado
+  * Comentários e documentação das funções
 * 1.0.0 - 08/10/2025
-    * Versão inicial do sistema
-    * Cálculos básicos de material vegetal
-    * Integração com Oracle Database
-    * Interface de menu interativa
+
+  * Versão inicial do sistema
+  * Cálculos básicos de material vegetal
+  * Integração com Oracle Database
+  * Interface de menu interativa
 
 ---
 
