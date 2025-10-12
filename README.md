@@ -11,7 +11,7 @@
 ## CAP6 - Fase 2 (2025)
 
 ## 👨‍🎓 Integrante: 
-- <a href="https://www.linkedin.com/in/dorta">João Paulo Dorta</a>
+- <a href="https://www.linkedin.com/in/seu-perfil">Seu Nome Completo</a>
 
 ## 👩‍🏫 Professor:
 ### Coordenador
