@@ -653,7 +653,7 @@ def gerar_txt(df: pd.DataFrame, resumo: dict, saida_txt: str = "Calculadora_rela
         f.write("RELATORIO DE CALCULOS - CALCULADORA DE CANA-DE-ACUCAR\n")
         f.write("=" * 80 + "\n")
         f.write(f"Data/Hora: {datetime.now().strftime('%d/%m/%Y as %H:%M:%S')}\n")
-        f.write(f"Sistema: Calculadora CLI v8.4 (Oracle Integration)\n")
+        f.write(f"Sistema: Calculadora Cana de Açúcar (Oracle/Json/TXT Integraçao)\n")
         f.write("=" * 80 + "\n\n")
         
         # Resumo executivo

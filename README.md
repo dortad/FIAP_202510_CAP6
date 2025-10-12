@@ -16,6 +16,7 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 ### 🎯 Objetivo Principal
 
 **Calcular a massa total de toletes (em toneladas) necessária para plantar uma área específica**, garantindo:
+
 - ✅ Otimização do uso de material vegetal
 - ✅ Redução de desperdícios
 - ✅ Controle de qualidade do plantio
@@ -26,6 +27,7 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 ## 🚀 Funcionalidades
 
 ### 📊 Cálculos Técnicos
+
 - **Densidade de plantio** (toletes por hectare)
 - **Massa de material vegetal** necessária
 - **Controle de qualidade** com sistema semáforo
@@ -33,14 +35,17 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 - **Consideração de perdas** por manobras e tráfego
 
 ### 📈 Relatórios Completos
+
 - **Relatório TXT**: Detalhado com explicações técnicas e análise completa
 
 ### 🔗 Integração Oracle
+
 - Conexão com banco de dados Oracle
 - Gerenciamento de parâmetros técnicos
 - Consulta automática de especificações por variedade
 
 ### ⚡ Interface Amigável
+
 - Menu interativo no terminal
 - Validação de entrada de dados
 - Mensagens de status claras
@@ -50,12 +55,12 @@ A **Calculadora de Cana-de-Açúcar** é um sistema desenvolvido para auxiliar n
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia | Versão | Função |
-|------------|--------|--------|
-| **Python** | 3.14.0 | Linguagem principal |
-| **Oracle Database** | - | Armazenamento de parâmetros |
-| **pandas** | ≥2.2.0 | Manipulação de dados |
-| **oracledb** | ≥2.3.0 | Conectividade Oracle |
+| Tecnologia                | Versão | Função                     |
+| ------------------------- | ------- | ---------------------------- |
+| **Python**          | 3.14.0  | Linguagem principal          |
+| **Oracle Database** | -       | Armazenamento de parâmetros |
+| **pandas**          | ≥2.2.0 | Manipulação de dados       |
+| **oracledb**        | ≥2.3.0 | Conectividade Oracle         |
 
 ---
 
@@ -67,7 +72,7 @@ FIAP_202510_CAP6/
 ├── 📄 calculadora_cana_principal.py    # Programa principal
 ├── 📄 funcoes_calculadora.py                # Funções de cálculo e relatórios
 ├── 📄 rotinas_V2.py                         # Conexão Oracle e utilitários
-├── 📄 parametros.json                       # Parâmetros técnicos (fallback)
+├── 📄 parametros.json                       # Parâmetros técnicos (dados agricolas)
 ├── 📄 requirements.txt                      # Dependências do projeto
 │
 ├── 📁 venv_Cap6/                           # Ambiente virtual Python
@@ -178,12 +183,12 @@ Perdas por tráfego (%): 1
 
 ### 🌱 Fundamentos da Cana
 
-| Termo | Definição |
-|-------|-----------|
-| **Tolete** | Pedaço do colmo cortado para plantio (30-50 cm) |
-| **Gema** | Broto que origina nova planta |
-| **Espaçamento** | Distância entre fileiras de plantio |
-| **Densidade** | Quantidade de material por área |
+| Termo                  | Definição                                      |
+| ---------------------- | ------------------------------------------------ |
+| **Tolete**       | Pedaço do colmo cortado para plantio (30-50 cm) |
+| **Gema**         | Broto que origina nova planta                    |
+| **Espaçamento** | Distância entre fileiras de plantio             |
+| **Densidade**    | Quantidade de material por área                 |
 
 ### ⚙️ Tipos de Plantio
 
@@ -203,16 +208,17 @@ Massa_total = Massa/ha × Área_efetiva
 
 ## 🎯 Sistema de Status (Semáforo)
 
-| Status | Descrição | Tolerância |
-|--------|-----------|------------|
-| 🟢 **OK** | Dentro das especificações | ≤ 5% (Seca), ≤ 8% (Chuva) |
-| 🟡 **ATENÇÃO** | Fora das tolerâncias | > tolerância definida |
+| Status                | Descrição                 | Tolerância                 |
+| --------------------- | --------------------------- | --------------------------- |
+| 🟢**OK**        | Dentro das especificações | ≤ 5% (Seca), ≤ 8% (Chuva) |
+| 🟡**ATENÇÃO** | Fora das tolerâncias       | > tolerância definida      |
 
 ---
 
 ## 📝 Exemplo de Saída
 
 ### Relatório Resumido (TXT)
+
 ```
 🌾 CALCULADORA DE CANA-DE-AÇÚCAR - RESULTADOS
 
@@ -239,6 +245,7 @@ O status indica se o cálculo está dentro das tolerâncias técnicas:
 ## 🧪 Testes e Validação
 
 ### Execução de Testes
+
 ```bash
 # Teste com dados de exemplo
 python calculadora_cana_principal.py
@@ -248,6 +255,7 @@ python -m pytest tests/ -v
 ```
 
 ### Casos de Teste Incluídos
+
 - ✅ Validação de fórmulas de cálculo
 - ✅ Teste de conexão Oracle
 - ✅ Geração de relatórios
@@ -259,6 +267,7 @@ python -m pytest tests/ -v
 ## 🤝 Contribuição
 
 ### Como Contribuir
+
 1. **Fork** o repositório
 2. Crie uma **branch** para sua feature (`git checkout -b feature/nova-funcionalidade`)
 3. **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
@@ -266,6 +275,7 @@ python -m pytest tests/ -v
 5. Abra um **Pull Request**
 
 ### Diretrizes
+
 - Siga o padrão de código existente
 - Adicione documentação para novas funcionalidades
 - Inclua testes para novas features
@@ -276,7 +286,7 @@ python -m pytest tests/ -v
 ## 📚 Documentação Adicional
 
 - � **[documentacao.md](documentacao.md)**: Documentação técnica completa com mapeamento de funções
-- �📖 **[O_que_faz_o_programa.md](O_que_faz_o_programa.md)**: Explicação detalhada das funcionalidades
+- 🀽� **[O_que_faz_o_programa.md](O_que_faz_o_programa.md)**: Explicação detalhada das funcionalidades
 - 🔧 **[requirements.txt](requirements.txt)**: Lista completa de dependências
 - 📊 **[parametros.json](parametros.json)**: Estrutura de parâmetros técnicos
 
@@ -285,6 +295,7 @@ python -m pytest tests/ -v
 ## 📋 Roadmap
 
 ### 🎯 Próximas Versões
+
 - [ ] Interface web (Flask/Django)
 - [ ] API REST para integração
 - [ ] Suporte a PostgreSQL/MySQL
@@ -293,6 +304,7 @@ python -m pytest tests/ -v
 - [ ] Integração com sistemas ERP
 
 ### 🔮 Ideias Futuras
+
 - [ ] Machine Learning para otimização de parâmetros
 - [ ] Integração com dados climáticos
 - [ ] Aplicativo mobile
@@ -302,10 +314,10 @@ python -m pytest tests/ -v
 
 ## 👥 Equipe
 
-| Papel | Nome | Contato |
-|-------|------|---------|
-| **Desenvolvedor Principal** | Seu Nome | seu.email@fiap.com.br |
-| **Orientador Acadêmico** | Prof. FIAP | prof@fiap.com.br |
+| Papel                             | Nome       | Contato               |
+| --------------------------------- | ---------- | --------------------- |
+| **Desenvolvedor Principal** | Seu Nome   | seu.email@fiap.com.br |
+| **Orientador Acadêmico**   | Prof. FIAP | prof@fiap.com.br      |
 
 ---
 
@@ -322,32 +334,6 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 - **Disciplina**: CAP6 - Capstone Project
 - **Período**: 2025.1 (Fase 2)
 - **Semestre**: 09-10/2025
-
----
-
-## 📞 Suporte
-
-### 🐛 Relatório de Bugs
-- Abra uma [Issue no GitHub](https://github.com/dortad/FIAP_202510_CAP6/issues)
-- Inclua detalhes do erro e steps para reproduzir
-
-### 💬 Discussões
-- Use as [Discussions do GitHub](https://github.com/dortad/FIAP_202510_CAP6/discussions)
-- Perguntas, sugestões e feedback são bem-vindos
-
-### 📧 Contato Direto
-- Email institucional: **seu.email@fiap.com.br**
-- LinkedIn: **[Seu Nome](https://linkedin.com/in/seu-perfil)**
-
----
-
-<div align="center">
-
-### 🌟 **Desenvolvido com ❤️ na FIAP** 🌟
-
-**"Transformando conhecimento em soluções práticas para o agronegócio"**
-
----
 
 ![FIAP Logo](https://img.shields.io/badge/FIAP-2025-blueviolet.svg?style=for-the-badge)
 

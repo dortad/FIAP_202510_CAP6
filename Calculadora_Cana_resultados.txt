@@ -1,23 +1,23 @@
 ================================================================================
 RELATORIO DE CALCULOS - CALCULADORA DE CANA-DE-ACUCAR
 ================================================================================
-Data/Hora: 12/10/2025 as 12:36:22
-Sistema: Calculadora CLI v8.4 (Oracle Integration)
+Data/Hora: 12/10/2025 as 15:49:30
+Sistema: Calculadora Cana de Açúcar (Oracle/Json/TXT Integraçao)
 ================================================================================
 
 [RESUMO] EXECUTIVO
 ----------------------------------------
 Total de linhas processadas: 2
-Soma total de massa (t): 401.696
-Media de massa por hectare: 21.382 t/ha
+Soma total de massa (t): 421.039
+Media de massa por hectare: 22.883 t/ha
 Status dos calculos:
    [OK] (dentro da tolerancia): 2
    [ATENCAO] (fora da tolerancia): 0
    [N/A] (sem dados suficientes): 0
 
 Produtividade por linha:
-   Linha 01: CTC20 [MEC] -> 22.120 t/ha | Area: 9.20 ha | Total: 203.502 t [OK]
-   Linha 02: CTC20 [MAN] -> 20.645 t/ha | Area: 9.60 ha | Total: 198.194 t [OK]
+   Linha 01: CTC20 [MEC] -> 23.645 t/ha | Area: 9.20 ha | Total: 217.537 t [OK]
+   Linha 02: CTC4 [MEC] -> 22.120 t/ha | Area: 9.20 ha | Total: 203.502 t [OK]
 
 ================================================================================
 
@@ -28,6 +28,31 @@ Produtividade por linha:
 ------------------------------
 Dados de entrada:
    Variedade: CTC20
+   [SECA] Epoca: Seca
+   [MEC] Processo: Mecanizado
+   Area total: 10.00 ha
+   Perda por manobra: 5.0%
+   Perda por trafego: 3.0%
+
+Resultados calculados:
+   Area efetiva: 9.20 ha
+   Massa por hectare: 23.645 t/ha
+   Massa total da area: 217.537 t
+   Status: [OK] OK
+
+Parametros tecnicos utilizados:
+   • Espacamento (E): 1.5
+   • Gemas finais (Gf): 12
+   • Gemas por tolete (s): 0.58
+   • Gemas uteis (g): 2.8
+   • Comprimento tolete (L): 0.4
+   • Densidade (rho): 1.2
+   • Massa por metro (d): 3.0
+
+[LINHA] 02
+------------------------------
+Dados de entrada:
+   Variedade: CTC4
    [CHUVA] Epoca: Chuva
    [MEC] Processo: Mecanizado
    Area total: 10.00 ha
@@ -45,31 +70,6 @@ Parametros tecnicos utilizados:
    • Gemas finais (Gf): 12
    • Gemas por tolete (s): 0.62
    • Gemas uteis (g): 2.8
-   • Comprimento tolete (L): 0.4
-   • Densidade (rho): 1.2
-   • Massa por metro (d): 2.4
-
-[LINHA] 02
-------------------------------
-Dados de entrada:
-   Variedade: CTC20
-   [CHUVA] Epoca: Chuva
-   [MAN] Processo: Manual
-   Area total: 10.00 ha
-   Perda por manobra: 3.0%
-   Perda por trafego: 1.0%
-
-Resultados calculados:
-   Area efetiva: 9.60 ha
-   Massa por hectare: 20.645 t/ha
-   Massa total da area: 198.194 t
-   Status: [OK] OK
-
-Parametros tecnicos utilizados:
-   • Espacamento (E): 1.5
-   • Gemas finais (Gf): 12
-   • Gemas por tolete (s): 0.62
-   • Gemas uteis (g): 3.0
    • Comprimento tolete (L): 0.4
    • Densidade (rho): 1.2
    • Massa por metro (d): 2.4

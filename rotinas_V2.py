@@ -216,14 +216,10 @@ def desconectar_oracle(conn):
 # ========== FUNÇÃO PARA CARREGAR DADOS JSON COMO DICIONÁRIO ==========
 def carregar_parametros_Json_como_dicionario():
     """
-    *** FUNÇÃO DE FALLBACK JSON ***
+    *** FUNÇÃO PARA CARREGAR JSON ***
     Carrega os parâmetros do arquivo JSON e converte para dicionário.
     
-    Utilizada como fallback quando:
-    - Tabela Oracle está vazia
-    - Conexão Oracle falha
-    - Sincronização inicial necessária
-    
+   
     Estrutura de retorno:
     - Chave: combinação "Variedade_Epoca_Processo" 
     - Valor: dicionário com todos os parâmetros técnicos

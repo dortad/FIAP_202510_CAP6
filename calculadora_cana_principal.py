@@ -1,5 +1,5 @@
 """
-Calculadora de Cana-de-Açúcar v2
+Calculadora de Cana-de-Açúcar v1
 
 Tabela: parametros
 
@@ -14,8 +14,6 @@ Tabela: parametros
   • l_to_rec       → Comprimento tolete
   • rho_rec        → Densidade
 
-Dependências:
-  pip install oracledb pandas
 """
 
 import os
@@ -379,7 +377,7 @@ def main():
 
     # 2) Menu inicial
     menu_inicial(MAP_DISPLAY, PARAMS)
-
+    clear_screen()
     print("\n[DICAS] Para entrada de dados:")
     print("   • :help     -> Ajuda básica")
     print("   • :help+ ou :gloss -> Ver glossário completo")
@@ -582,7 +580,7 @@ def main():
     print("EXPORTACAO DE RESULTADOS")
     print("="*60)
     
-    nome = ask_str("Nome base do arquivo (sem extensão):", required=False, default="Calculadora_Cana_v1_1_resultados", MAP_DISPLAY=MAP_DISPLAY, PARAMS=PARAMS)
+    nome = ask_str("Nome base do arquivo (sem extensão):", required=False, default="Calculadora_Cana_resultados", MAP_DISPLAY=MAP_DISPLAY, PARAMS=PARAMS)
 
     print(f"\n[INFO] Gerando relatório em texto...")
 
@@ -590,7 +588,7 @@ def main():
     print(f"[OK] TXT: {nome}.txt")
 
     print("\n[SUCESSO] Processo concluído com sucesso!")
-    print("Obrigado por usar a Calculadora de Cana v1.1!")
+    print("Obrigado por usar a Calculadora de Cana de Açúcar!")
 
 if __name__ == "__main__":
     try:
