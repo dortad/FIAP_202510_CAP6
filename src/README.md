@@ -5,22 +5,25 @@ Esta pasta contém todos os arquivos de código fonte do projeto desenvolvido ao
 ## 📂 Estrutura dos Arquivos
 
 ### Arquivos Principais
+
 - **`funcoes_calculadora.py`** - Funções auxiliares e cálculos do sistema
 - **`funcoes_calculadora.py`** - Biblioteca completa de cálculos agronômicos e interface
 - **`rotinas_V2.py`** - Integração com Oracle Database e operações de dados
 
 ### Arquivos de Configuração
+
 - **`requirements.txt`** - Dependências Python necessárias
 - **`parametros.json`** - Parâmetros técnicos das variedades de cana-de-açúcar
 
 ## 🚀 Como Executar
 
 1. **Instalar dependências:**
+
    ```bash
    pip install -r requirements.txt
    ```
-
 2. **Executar o programa:**
+
 ```bash
    # Execute o programa principal da pasta raiz:
    cd ..
@@ -33,10 +36,14 @@ Esta pasta contém todos os arquivos de código fonte do projeto desenvolvido ao
 
 ## 📈 Versões
 
-- **v2.0** - Versão atual simplificada (apenas relatórios TXT)
-- **v1.1** - Versão com múltiplos formatos de saída
-- **v1.0** - Versão inicial
+1.0.0 - 10/01/2025- Versão inicial da calculadora de cana-de-açúcar
+- Implementação da integração com Oracle Database
+- Sistema de configuração via JSON
+- Funções de cálculo de produtividade
+- Aplicação da estrutura FIAP template
+- Programa principal movido para raiz do projeto
 
 ---
 
 *Este código foi desenvolvido como parte do projeto FIAP CAP6 - Fase 2 (2025)*
+```

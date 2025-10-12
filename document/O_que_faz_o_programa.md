@@ -16,14 +16,18 @@ Calcular **quantas toneladas de mudas** (material vegetal) são necessárias par
 ## 🔧 Como Funciona
 
 ### 1. Entrada de Dados
+
 O usuário fornece:
+
 - **Área**: Tamanho da propriedade em hectares
 - **Variedade**: Escolhe entre 15+ variedades catalogadas (RB, SP, CTC, etc.)
 - **Espaçamento**: Distância entre fileiras (1,0m a 1,8m)
 - **Fonte das mudas**: Viveiro, canavial próprio ou terceiros
 
 ### 2. Processamento
+
 O sistema:
+
 - Consulta banco de dados Oracle com parâmetros técnicos
 - Aplica fórmulas agronômicas validadas
 - Considera fatores como:
@@ -33,7 +37,9 @@ O sistema:
   - Perdas estimadas no processo
 
 ### 3. Resultados
+
 Gera relatório completo com:
+
 - **Quantidade total de mudas necessárias** (em toneladas)
 - **Número de colmos** requeridos
 - **Análise de qualidade** com sistema semáforo
@@ -45,12 +51,14 @@ Gera relatório completo com:
 **Cenário**: Plantar 10 hectares com variedade RB92579, espaçamento 1,4m
 
 **Entrada**:
+
 - Área: 10 ha
-- Variedade: RB92579 
+- Variedade: RB92579
 - Espaçamento: 1,4m
 - Qualidade: Boa (viveiro)
 
 **Resultado**:
+
 - Material necessário: **18,2 toneladas**
 - Número de colmos: **1.820 unidades**
 - Status: **✅ OK** - Dentro dos padrões recomendados
@@ -59,12 +67,14 @@ Gera relatório completo com:
 ## 🎯 Benefícios
 
 ### Para o Produtor Rural
+
 - **Economia**: Evita desperdício calculando exatamente o necessário
 - **Planejamento**: Permite orçamento preciso antes do plantio
 - **Qualidade**: Garante densidade adequada para máxima produtividade
 - **Facilidade**: Interface simples, sem necessidade de conhecimento técnico avançado
 
 ### Para Técnicos e Agrônomos
+
 - **Precisão**: Cálculos baseados em parâmetros científicos validados
 - **Agilidade**: Relatórios automáticos em segundos
 - **Rastreabilidade**: Histórico completo das recomendações
@@ -81,6 +91,7 @@ Gera relatório completo com:
 ## 📋 Tipos de Relatório
 
 ### Relatório Técnico Completo (TXT)
+
 - Detalhes completos do cálculo
 - Parâmetros utilizados
 - Recomendações específicas da variedade
@@ -99,7 +110,8 @@ Gera relatório completo com:
 ## 📞 Suporte Técnico
 
 Para dúvidas sobre:
-- **Variedades disponíveis**: Consulte `fontes_info.md`
+
+- **Variedades disponíveis**: Consulte `fontes_info.md (na pasta /document/other)`
 - **Aspectos técnicos**: Veja `documentacao.md`
 - **Instalação**: Consulte `README.md` principal
 
