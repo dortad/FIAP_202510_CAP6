@@ -1,0 +1,70 @@
+# Dependências do projeto FIAP_202510_CAP6
+# Calculadora Agrícola de Cana-de-açúcar com Integração Oracle
+
+# ==============================================================================
+# DEPENDÊNCIAS PRINCIPAIS
+# ==============================================================================
+
+# Conexão com Oracle Database
+oracledb>=2.3.0
+
+# Manipulação e análise de dados (versão compatível com Python 3.14)
+pandas>=2.2.0
+
+# Computação numérica
+numpy>=1.26.0
+
+# Visualização de dados
+matplotlib>=3.8.0
+
+# Manipulação de planilhas Excel
+xlsxwriter>=3.1.0
+
+# ==============================================================================
+# BIBLIOTECAS PADRÃO PYTHON (já incluídas na instalação)
+# ==============================================================================
+# os - operações do sistema operacional
+# json - manipulação de arquivos JSON  
+# datetime - manipulação de datas e timestamps
+# typing - type hints (Tuple, Dict, List)
+# unicodedata - normalização e processamento de texto Unicode
+# unittest - framework de testes (usado em rotinas_V2.py)
+
+# ==============================================================================
+# DEPENDÊNCIAS DE DESENVOLVIMENTO (opcional)
+# ==============================================================================
+# Uncomment below for development tools:
+
+# # Formatação de código
+# black>=23.0.0
+# 
+# # Linting e análise de código
+# flake8>=6.0.0
+# pylint>=3.0.0
+# 
+# # Testes
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+# 
+# # Notebooks Jupyter
+# jupyter>=1.0.0
+# notebook>=6.5.0
+
+# ==============================================================================
+# INSTALAÇÃO
+# ==============================================================================
+# Para instalar todas as dependências:
+# pip install -r requirements.txt
+# 
+# Para instalar em ambiente virtual:
+# python -m venv venv_Cap6
+# .\venv_Cap6\Scripts\activate    # Windows
+# source venv_Cap6/bin/activate   # Linux/Mac
+# pip install -r requirements.txt
+
+# ==============================================================================
+# COMPATIBILIDADE
+# ==============================================================================
+# Python >= 3.10
+# Oracle Database 19c ou superior (para funcionalidades completas)
+# Sistema Operacional: Windows, Linux, macOS
