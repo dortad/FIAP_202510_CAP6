@@ -96,6 +96,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venv_Capa6/
+
+# Templates
+template-main/
 
 # Spyder project settings
 .spyderproject
