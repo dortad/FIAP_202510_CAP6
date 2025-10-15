@@ -69,14 +69,29 @@ Descrição das pastas e arquivos principais:
 ### Pré-requisitos
 
 - Python 3.10 ou superior
-- Oracle Database (opcional - sistema funciona sem banco)
+- Oracle Database (opcional - sistema funciona com fallback JSON)
 - IDE de sua preferência (VS Code recomendado)
 
 ### Bibliotecas necessárias
 
+Instale todas as dependências com:
+
 ```bash
-pip install cx-Oracle
+pip install -r requirements.txt
 ```
+
+Ou individualmente:
+
+```bash
+pip install oracledb pandas numpy matplotlib xlsxwriter
+```
+
+**Principais bibliotecas:**
+- `oracledb`: Conexão com Oracle Database
+- `pandas`: Manipulação e análise de dados
+- `numpy`: Computação numérica
+- `matplotlib`: Visualização de dados
+- `xlsxwriter`: Geração de planilhas Excel
 
 ### Instalação e execução
 
@@ -104,13 +119,14 @@ pip install cx-Oracle
 
 ## 🗃 Histórico de lançamentos
 
-- 1.0.0 - 10/01/2025
-  - Versão inicial da calculadora de cana-de-açúcar
-  - Implementação da integração com Oracle Database
+- 1.0.0 - 13/02/2025
+  - Versão final da calculadora de cana-de-açúcar
+  - Programa principal reorganizado em `src/app.py`
+  - Integração completa com Oracle Database (biblioteca `oracledb`)
   - Sistema de configuração via JSON
-  - Funções de cálculo de produtividade
-  - Aplicação da estrutura FIAP template
-  - Programa principal movido para raiz do projeto
+  - Funções de cálculo de produtividade e análise de dados
+  - Documentação técnica completa com análise de conformidade
+  - Estrutura de projeto FIAP template aplicada
 
 ## 📋 Licença
 
