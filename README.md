@@ -11,7 +11,7 @@
 ## CAP6 - Fase 2 (2025)
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/in/seu-perfil">Seu Nome Completo</a>
+- <a href="https://www.linkedin.com/in/murilo-borges-ba4985212/">Murilo Ferreira Borges</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
