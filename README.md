@@ -41,9 +41,11 @@ O projeto visa aplicar conceitos de programação Python, integração com banco
 .
 ├── assets/
 ├── document/
-├── src/
-├── calculadora_cana_principal.py
-└── parametros.json
+└── src/
+    ├── app.py
+    ├── funcoes_calculadora.py
+    ├── rotinas_V2.py
+    └── parametros.json
 ```
 
 Descrição das pastas e arquivos principais:
@@ -51,10 +53,10 @@ Descrição das pastas e arquivos principais:
 - **assets**: Arquivos relacionados a elementos não-estruturados como imagens e recursos visuais
 - **document**: Documentos do projeto e atividades acadêmicas
 - **src**: Código fonte modularizado do projeto
+  - `app.py`: **Programa principal** (executar este arquivo)
   - `funcoes_calculadora.py`: Funções principais de cálculo
   - `rotinas_V2.py`: Integração com Oracle Database
-- **calculadora_cana_principal.py**: Programa principal (executar este arquivo)
-- **parametros.json**: Configurações e parâmetros do sistema
+  - `parametros.json`: Configurações e parâmetros do sistema
 
 ## 🔧 Como executar o código
 
@@ -77,18 +79,18 @@ pip install cx-Oracle
    ```
 
 2. **Configure os parâmetros (opcional):**
-   - Edite o arquivo `parametros.json` com suas configurações
+   - Edite o arquivo `src/parametros.json` com suas configurações
    - Para banco Oracle, configure as credenciais apropriadas
 
 3. **Execute o programa principal:**
    ```bash
-   python calculadora_cana_principal.py
+   python src/app.py
    ```
 
 ### Estrutura de execução
-- O programa principal está na raiz do projeto (`calculadora_cana_principal.py`)
+- O programa principal está em `src/app.py`
 - Os módulos auxiliares estão em `src/`
-- Configurações em `parametros.json`
+- Configurações em `src/parametros.json`
 
 
 ## 🗃 Histórico de lançamentos

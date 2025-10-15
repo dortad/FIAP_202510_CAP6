@@ -45,12 +45,13 @@
 
 ```
 FIAP_202510_CAP6/
-├── 📄 calculadora_cana_principal.py    # Programa principal (603 linhas)
-├── 📄 funcoes_calculadora.py           # Biblioteca de funções (925 linhas)  
-├── 📄 rotinas_V2.py                    # Integração Oracle (398 linhas)
-├── 📄 parametros.json                  # Parâmetros técnicos (cultura agricola)
+├── � src/
+│   ├── 📄 app.py                       # Programa principal (603 linhas)
+│   ├── 📄 funcoes_calculadora.py       # Biblioteca de funções (925 linhas)  
+│   ├── 📄 rotinas_V2.py                # Integração Oracle (398 linhas)
+│   └── 📄 parametros.json              # Parâmetros técnicos (cultura agricola)
 ├── 📄 requirements.txt                 # Dependências Python (simplificadas)
-├── 📊 Documentação/
+├── 📊 document/
 │   ├── 📄 documentacao.md              # Esta documentação técnica
 │   ├── 📄 INDICE_DOCUMENTACAO.md       # Índice de navegação
 │   ├── 📄 README.md                    # Documentação principal
@@ -81,7 +82,7 @@ oracledb>=2.3.0        # Conectividade Oracle Database
 
 #### 🗂️ Dependências por Arquivo
 
-#### calculadora_cana_principal.py
+#### src/app.py
 
 - **Função**: Programa principal, menu e orquestração
 - **Imports**: `rotinas_V2.py`, `funcoes_calculadora.py`, `pandas`, `os`
@@ -149,7 +150,7 @@ def gerar_txt(df: pd.DataFrame, resumo: dict, saida_txt: str):
   - Glossário de termos
 - **Usado em**: `main()` linha 495 para relatório final
 
-### 3. **`main()`** - calculadora_cana_principal.py linha 327
+### 3. **`main()`** - src/app.py linha 327
 
 ```python
 def main():
@@ -165,7 +166,7 @@ def main():
 - **Tratamento**: Erros, validações, sugestões
 - **Usado em**: Bloco `__main__` como ponto de entrada
 
-### 4. **`load_params_from_oracle_v2()`** - calculadora_cana_principal.py linha 44
+### 4. **`load_params_from_oracle_v2()`** - src/app.py linha 44
 
 ```python
 def load_params_from_oracle_v2(tipo_conexao: str, params_sql: str, tol_chuva: float, tol_seca: float):
@@ -203,8 +204,8 @@ def conectar_oracle(tipo: str = 'producao'):
 
 - **Função**: Limpa tela do terminal (Windows/Linux compatível)
 - **Usado em**:
-  - `calculadora_cana_principal.py`: `menu_inicial()` linha 210
-  - `calculadora_cana_principal.py`: `main()` linha 268
+  - `src/app.py`: `menu_inicial()` linha 210
+  - `src/app.py`: `main()` linha 268
 
 #### `strip_accents(text: str)` - Linha 32
 
@@ -295,7 +296,7 @@ def conectar_oracle(tipo: str = 'producao'):
 - **Função**: Insere/atualiza dados JSON no Oracle
 - **Usado em**: Sincronização automática e manual
 
-### 📋 FUNÇÕES PRINCIPAIS (calculadora_cana_principal.py)
+### 📋 FUNÇÕES PRINCIPAIS (src/app.py)
 
 #### `main()` - Linha 327 ⭐
 
@@ -328,7 +329,7 @@ def conectar_oracle(tipo: str = 'producao'):
 ## 🔄 DEPENDÊNCIAS ENTRE ARQUIVOS
 
 ```
-main() [calculadora_cana_principal.py]
+main() [src/app.py]
 ├── load_params_from_oracle_v2()
 │   ├── conectar_oracle() [rotinas_V2.py]
 │   ├── carregar_parametros_Json_como_dicionario() [rotinas_V2.py]  
@@ -348,9 +349,9 @@ main() [calculadora_cana_principal.py]
 
 | Arquivo                           | Depende de                            | Usado por                     |
 | --------------------------------- | ------------------------------------- | ----------------------------- |
-| `calculadora_cana_principal.py` | rotinas_V2.py, funcoes_calculadora.py | __main__                |
-| `funcoes_calculadora.py`        | pandas, unicodedata, os, datetime     | calculadora_cana_principal.py |
-| `rotinas_V2.py`                 | oracledb, pandas, json, datetime      | calculadora_cana_principal.py |
+| `src/app.py`                    | rotinas_V2.py, funcoes_calculadora.py | __main__                |
+| `funcoes_calculadora.py`        | pandas, unicodedata, os, datetime     | src/app.py |
+| `rotinas_V2.py`                 | oracledb, pandas, json, datetime      | src/app.py |
 
 ---
 

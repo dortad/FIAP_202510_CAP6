@@ -25,10 +25,15 @@ Esta pasta contém todos os arquivos de código fonte do projeto desenvolvido ao
 2. **Executar o programa:**
 
 ```bash
-   # Execute o programa principal da pasta raiz:
-   cd ..
-   python calculadora_cana_principal.py
-```## 🔧 Pré-requisitos
+   # Execute o programa principal:
+   python src/app.py
+   
+   # Ou diretamente da pasta src:
+   cd src
+   python app.py
+```
+
+## 🔧 Pré-requisitos
 
 - Python 3.10+
 - Oracle Database (opcional - sistema possui fallback JSON)
