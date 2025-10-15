@@ -37,6 +37,8 @@ Este projeto implementa uma **Calculadora de Produtividade de Cana-de-Açúcar**
 - Interface de linha de comando intuitiva
 - Sistema de configuração flexível via JSON
 
+### Neste link abaixo há um exemplo da execução
+
 📌 **[Ver exemplo completo de execução do programa](document/exemplo_execucao.md)**
 
 ### Objetivo Acadêmico:
@@ -89,6 +91,7 @@ pip install oracledb pandas numpy matplotlib xlsxwriter
 ```
 
 **Principais bibliotecas:**
+
 - `oracledb`: Conexão com Oracle Database
 - `pandas`: Manipulação e análise de dados
 - `numpy`: Computação numérica
