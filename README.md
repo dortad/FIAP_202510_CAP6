@@ -37,6 +37,8 @@ Este projeto implementa uma **Calculadora de Produtividade de Cana-de-Açúcar**
 - Interface de linha de comando intuitiva
 - Sistema de configuração flexível via JSON
 
+📌 **[Ver exemplo completo de execução do programa](document/exemplo_execucao.md)**
+
 ### Objetivo Acadêmico:
 
 O projeto visa aplicar conceitos de programação Python, integração com bancos de dados Oracle, e boas práticas de desenvolvimento de software no contexto do agronegócio brasileiro, especificamente no setor sucroenergético.
