@@ -17,19 +17,16 @@ Tabela: parametros
 """
 
 import os
-import sys
 import pandas as pd
 
-# Adicionar a pasta src ao path para importar os módulos
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
+# Importar módulos da mesma pasta (agora está dentro de src)
 from rotinas_V2 import *
 from funcoes_calculadora import *
 
 # ============================== CONFIGURAÇÕES ==============================
 
 # Configurações para conexão Oracle usando rotinas_V2.py
-TIPO_CONEXAO = 'teste'  # 'producao' ou 'teste' - definido em rotinas_V2.py
+TIPO_CONEXAO = 'producao'  # 'producao' ou 'teste' - definido em rotinas_V2.py
 
 # SQL para carregar parâmetros (adaptado para usar rotinas_V2.py)
 PARAMS_SQL = """
@@ -70,7 +67,7 @@ def load_params_from_oracle_v2(tipo_conexao: str, params_sql: str, tol_chuva: fl
     Usado em:
         - main() linha 273 - Inicialização única do programa
         
-    Substitui a função original do funcoes_calculadora.py para usar rotinas_V2.
+
     """
     print("\n=== CARREGAMENTO DE PARAMETROS (usando rotinas_V2.py) ===")
     
