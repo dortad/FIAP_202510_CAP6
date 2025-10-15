@@ -177,7 +177,7 @@ def conectar_oracle(tipo: str = 'producao'):
 
     if tipo.lower() == 'producao':
         user = 'RM567007'
-        password = 'RM567007'
+        password = 'Fiap#2025'
         dsn = 'oracle.fiap.com.br:1521/ORCL'   
     elif tipo.lower() == 'teste':
         user = 'RM567007'

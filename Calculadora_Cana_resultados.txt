@@ -1,24 +1,22 @@
 ================================================================================
 RELATORIO DE CALCULOS - CALCULADORA DE CANA-DE-ACUCAR
 ================================================================================
-Data/Hora: 12/10/2025 as 17:25:24
+Data/Hora: 13/10/2025 as 20:36:23
 Sistema: Calculadora Cana de Açúcar (Oracle/Json/TXT Integraçao)
 ================================================================================
 
 [RESUMO] EXECUTIVO
 ----------------------------------------
-Total de linhas processadas: 3
-Soma total de massa (t): 618.867
-Media de massa por hectare: 22.103 t/ha
+Total de linhas processadas: 1
+Soma total de massa (t): 203.502
+Media de massa por hectare: 22.120 t/ha
 Status dos calculos:
-   [OK] (dentro da tolerancia): 3
+   [OK] (dentro da tolerancia): 1
    [ATENCAO] (fora da tolerancia): 0
    [N/A] (sem dados suficientes): 0
 
 Produtividade por linha:
    Linha 01: CTC4 [MEC] -> 22.120 t/ha | Area: 9.20 ha | Total: 203.502 t [OK]
-   Linha 02: CTC20 [MEC] -> 22.120 t/ha | Area: 9.20 ha | Total: 203.502 t [OK]
-   Linha 03: RB867515 [MAN] -> 22.069 t/ha | Area: 9.60 ha | Total: 211.862 t [OK]
 
 ================================================================================
 
@@ -49,56 +47,6 @@ Parametros tecnicos utilizados:
    • Comprimento tolete (L): 0.4
    • Densidade (rho): 1.2
    • Massa por metro (d): 2.4
-
-[LINHA] 02
-------------------------------
-Dados de entrada:
-   Variedade: CTC20
-   [CHUVA] Epoca: Chuva
-   [MEC] Processo: Mecanizado
-   Area total: 10.00 ha
-   Perda por manobra: 5.0%
-   Perda por trafego: 3.0%
-
-Resultados calculados:
-   Area efetiva: 9.20 ha
-   Massa por hectare: 22.120 t/ha
-   Massa total da area: 203.502 t
-   Status: [OK] OK
-
-Parametros tecnicos utilizados:
-   • Espacamento (E): 1.5
-   • Gemas finais (Gf): 12
-   • Gemas por tolete (s): 0.62
-   • Gemas uteis (g): 2.8
-   • Comprimento tolete (L): 0.4
-   • Densidade (rho): 1.2
-   • Massa por metro (d): 2.4
-
-[LINHA] 03
-------------------------------
-Dados de entrada:
-   Variedade: RB867515
-   [SECA] Epoca: Seca
-   [MAN] Processo: Manual
-   Area total: 10.00 ha
-   Perda por manobra: 3.0%
-   Perda por trafego: 1.0%
-
-Resultados calculados:
-   Area efetiva: 9.60 ha
-   Massa por hectare: 22.069 t/ha
-   Massa total da area: 211.862 t
-   Status: [OK] OK
-
-Parametros tecnicos utilizados:
-   • Espacamento (E): 1.5
-   • Gemas finais (Gf): 12
-   • Gemas por tolete (s): 0.58
-   • Gemas uteis (g): 3.0
-   • Comprimento tolete (L): 0.4
-   • Densidade (rho): 1.2
-   • Massa por metro (d): 3.0
 
 ================================================================================
 EXPLICACAO DO STATUS/SEMAFORO
